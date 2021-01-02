@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve",
+    "start": "node dist/apps/api/main",
+    "dev": "nx serve memorio",
     "api": "nx serve api",
     "build": "nx build",
     "test": "nx test",

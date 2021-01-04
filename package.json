@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve",
+    "start": "node api/main",
+    "dev": "nx serve memorio",
+    "preDeploy": "tar -cvf ./deploy.tar --exclude='*.map' ./captain-definition ./Dockerfile ./package.json ./dist/apps/*",
+    "deploy": "npm run build && npm run preDeploy && caprover deploy -t ./deploy.tar",
     "api": "nx serve api",
     "build": "nx build",
     "test": "nx test",

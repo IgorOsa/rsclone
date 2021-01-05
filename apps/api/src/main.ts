@@ -12,7 +12,7 @@ app.get('/api', (req, res) => {
   res.send(greeting);
 });
 
-app.get('/', function (req, res) {
+app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../memorio', 'index.html'));
 });
 

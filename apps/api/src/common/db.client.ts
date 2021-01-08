@@ -6,12 +6,13 @@ export const connectToDB = (cb: () => void) => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
+    useCreateIndex: true,
   });
 
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'db connection error'));
   db.once('open', () => {
-    console.log('Connected to MongoDB!');
+    console.log('\x1b[32mConnected to MongoDB!');
     cb();
   });
 };

@@ -1,6 +1,8 @@
-import User from './user.model';
-import { NotFoundError } from './../../common/errors';
+import User, { IUserModel } from './user.model';
+import { EntityExistsError, NotFoundError } from './../../common/errors';
 import { IUser } from '@memorio/api-interfaces';
+
+const MONGO_ENTITY_EXISTS_ERROR_CODE = 11000;
 
 export const getAll = async () => {
   return User.find({}, (err, data) => {
@@ -21,4 +23,27 @@ export const get = async (id: string) => {
   return user;
 };
 
-export const create = async (user: IUser) => User.create(user);
+export const create = async (user: IUser) => {
+  try {
+    return await User.create(user);
+  } catch (err) {
+    if (err.code === MONGO_ENTITY_EXISTS_ERROR_CODE) {
+      throw new EntityExistsError(`User exists`);
+    } else {
+      throw err;
+    }
+  }
+};
+
+export const update = async (
+  id: string,
+  user: IUserModel
+): Promise<IUserModel> => {
+  const updatedUser = await User.findOneAndUpdate({ _id: id }, user);
+
+  if (!updatedUser) {
+    throw new NotFoundError(`User with id: ${id} not found!`);
+  }
+
+  return updatedUser;
+};

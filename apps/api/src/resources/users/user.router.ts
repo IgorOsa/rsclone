@@ -1,5 +1,4 @@
 import * as express from 'express';
-import User from './user.model';
 import * as usersService from './user.service';
 import { wrap } from '../../common/asyncWrapper';
 
@@ -24,10 +23,15 @@ router.route('/:id').get(
 );
 
 router.route('/').post(
-  wrap(async (req, res) => {
-    const user = await usersService.create(
-      User.schema.methods.fromRequest(req.body)
-    );
+  wrap(async (req: express.Request, res: express.Response) => {
+    const user = await usersService.create(req.body);
+    res.json(user.toResponse());
+  })
+);
+
+router.route('/:id').put(
+  wrap(async (req: express.Request, res: express.Response) => {
+    const user = await usersService.update(req.params.id, req.body);
     res.json(user.toResponse());
   })
 );

@@ -3,14 +3,13 @@ import * as mongoose from 'mongoose';
 import * as uuid from 'uuid';
 import { hashPassword } from './../../common/hashHelpers';
 
-interface IUserModel extends IUser, mongoose.Document {
+export interface IUserModel extends IUser, mongoose.Document {
+  id?: string;
   toResponse(): IUserResponse;
   fromRequest(): IUser;
 }
 
-interface IUserResponse extends Omit<IUser, 'password'> {
-  id: string;
-}
+export type IUserResponse = Omit<IUser, 'password'>;
 
 const userSchema: mongoose.Schema = new mongoose.Schema(
   {
@@ -25,6 +24,7 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
       type: String,
       unique: true,
       required: true,
+      lowercase: true,
     },
     password: {
       type: String,
@@ -45,9 +45,7 @@ async function setHashedPassword(next) {
 }
 
 async function updateHashedPassword(next) {
-  const docToUpdate = await this.model.findOne(this.getQuery());
-
-  if (docToUpdate.password !== this._update.password) {
+  if (this._update.password) {
     const newPassword = await hashPassword(this._update.password);
     this._update.password = newPassword;
   }
@@ -64,11 +62,6 @@ userSchema.method('toResponse', function () {
   delete rest.password;
   delete rest.__v;
   return { id: _id, ...rest };
-});
-
-userSchema.method('fromRequest', function (user: IUser) {
-  const { login, password, name } = user;
-  return new User({ login, password, name });
 });
 
 const User = mongoose.model<IUserModel>('User', userSchema);

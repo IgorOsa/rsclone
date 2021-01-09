@@ -1,23 +1,36 @@
-export class NotFoundError extends Error {
-  status: string;
-  constructor(message = 'Not found') {
+import { ReasonPhrases, StatusCodes } from 'http-status-codes';
+
+class AppError extends Error {
+  status: string | StatusCodes;
+  constructor(message: string | ReasonPhrases) {
     super(message);
-    this.status = '404';
   }
 }
 
-export class UnauthorizedError extends Error {
-  status: string;
-  constructor(message = 'Unauthorized') {
+export class NotFoundError extends AppError {
+  constructor(message: string | ReasonPhrases) {
     super(message);
-    this.status = '401';
+    this.status = StatusCodes.NOT_FOUND;
   }
 }
 
-export class AuthorizationError extends Error {
-  status: string;
-  constructor(message = 'Forbidden') {
+export class UnauthorizedError extends AppError {
+  constructor(message: string | ReasonPhrases) {
     super(message);
-    this.status = '403';
+    this.status = StatusCodes.UNAUTHORIZED;
+  }
+}
+
+export class AuthorizationError extends AppError {
+  constructor(message: string | ReasonPhrases) {
+    super(message);
+    this.status = StatusCodes.FORBIDDEN;
+  }
+}
+
+export class EntityExistsError extends AppError {
+  constructor(message: string | ReasonPhrases) {
+    super(message);
+    this.status = StatusCodes.EXPECTATION_FAILED;
   }
 }

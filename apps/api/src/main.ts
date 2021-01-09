@@ -4,7 +4,7 @@ import { PORT } from './common/config';
 import { connectToDB } from './common/db.client';
 import { Message } from '@memorio/api-interfaces';
 import userRouter from './resources/users/user.router';
-import { handleErrors } from './common/errorHandler';
+import { errorHandler } from './common/errorHandler';
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.get('/api', (req, res, next) => {
 
 app.use('/api/users', /*authChecker,*/ userRouter);
 
-app.use(handleErrors);
+app.use(errorHandler);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../memorio', 'index.html'));

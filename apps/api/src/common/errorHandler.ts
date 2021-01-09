@@ -1,15 +1,12 @@
-import { NotFoundError, AuthorizationError, UnauthorizedError } from './errors';
+import { StatusCodes, ReasonPhrases } from 'http-status-codes';
 
-export const handleErrors = (err, req, res, next) => {
-  if (
-    err instanceof NotFoundError ||
-    err instanceof AuthorizationError ||
-    err instanceof UnauthorizedError
-  ) {
+export const errorHandler = (err, req, res, next) => {
+  if (err.status) {
     res.status(err.status).send(err.message);
-  } else if (err) {
-    console.error(err);
-    res.status(500).send('Internal Server Error');
+  } else {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(ReasonPhrases.INTERNAL_SERVER_ERROR);
   }
   next();
 };

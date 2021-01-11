@@ -3,7 +3,7 @@ export interface Message {
 }
 
 export interface IUser {
-  name: string;
+  name?: string;
   login: string;
   password: string;
 }

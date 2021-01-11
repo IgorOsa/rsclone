@@ -2,4 +2,37 @@
   background-color: #2c3648;
   width: 100%;
   color: white;
+
+  &__title {
+    margin-top: 100px;
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    transform: rotate(-3deg);
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  &__link {
+    margin-top: 20px;
+    display: block;
+    color: #2c3648;
+    background-color: yellow;
+    padding: 10px 15px;
+    border-radius: 5px;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 1.2rem;
+    max-width: 150px;
+    text-align: center;
+
+    &:hover {
+      text-decoration: none;
+      color: #2c3648;
+      opacity: .9;
+    }
+  }
 }

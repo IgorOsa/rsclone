@@ -1,1 +1,33 @@
-@import "~bootstrap/scss/bootstrap";
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #2c3648;
+  width: 100%;
+
+  .btn-primary {
+    background-color: transparent;
+    border: none;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .show>.btn-primary.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+  }
+
+  .nav-bar {
+    a {
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  &__logo {
+    a {
+      font-size: 1.8rem;
+      color: yellow;
+    }
+  }
+}

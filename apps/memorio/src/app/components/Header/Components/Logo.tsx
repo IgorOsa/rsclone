@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Logo = () => (
-  <div>
-    <Link to="/">LOGO</Link>
+  <div className="header__logo logo">
+    <Link to="/">MEMORIO</Link>
   </div>
 );
 

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 export const Login = () => {
   return (
-    <div>
-      <h1>
-        Login
-      </h1>
-    </div>
+    <main style={{ marginTop: "150px", height: "calc(100vh - 250px)" }}>
+      <LoginForm />
+    </main>
   );
 };
 

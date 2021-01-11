@@ -1,0 +1,22 @@
+.language-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.carousel-lang {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 50px 0;
+  overflow: hidden;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    line-height: 1.25;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}

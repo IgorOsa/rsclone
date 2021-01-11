@@ -1,0 +1,40 @@
+.courses-intro {
+    background-color: #2c3648;
+    color: white;
+
+    .container {
+        max-width: 1000px;
+    }
+
+    &__title {
+        margin-top: 180px;
+        font-size: 4rem;
+        font-weight: 800;
+        width: 80%;
+        text-align: center;
+        transform: rotate(-3deg);
+        color: yellow;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        margin-top: 30px;
+    }
+
+    &__link {
+        margin-top: 20px;
+        display: block;
+        color: #2c3648;
+        background-color: yellow;
+        padding: 10px 15px;
+        border-radius: 5px;
+        line-height: 1.5;
+        font-weight: 500;
+        font-size: 1.2rem;
+        &:hover {
+            text-decoration: none;
+            color: #2c3648;
+            opacity: .9;
+        }
+    }
+}

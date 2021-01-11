@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Bienvenue from '../components/Bienvenue/Bienvenue';
 
 export const SignUp = () => {
   return (
     <div>
-      <h1>
-        SignUp
-      </h1>
+      <Bienvenue />
     </div>
   );
 };

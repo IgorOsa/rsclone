@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Message } from '@memorio/api-interfaces';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Main from './components/Main/Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Row, Button } from 'react-bootstrap';
@@ -28,15 +29,14 @@ export const App = () => {
   return (
     <>
       <Router>
-        <Container>
-            <Header />
-            <Switch>
-              <Route exact path="/" component={ Home } />
-              <Route path="/courses" component={ Courses } />
-              <Route path="/login" component={ Login } />
-              <Route path="/signup" component={ SignUp } />
-            </Switch>
-        </Container>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={ Home } />
+          <Route path="/courses" component={ Courses } />
+          <Route path="/login" component={ Login } />
+          <Route path="/signup" component={ SignUp } />
+        </Switch>
+        <Footer />
       </Router>
     </>
   );

@@ -3,6 +3,7 @@ import * as path from 'path';
 import { PORT } from './common/config';
 import { connectToDB } from './common/db.client';
 import { Message } from '@memorio/api-interfaces';
+import loginRouter from './resources/login/login.router';
 import userRouter from './resources/users/user.router';
 import { errorHandler } from './common/errorHandler';
 
@@ -22,6 +23,8 @@ app.get('/api', (req, res, next) => {
   }
   next();
 });
+
+app.use('/api/login', loginRouter);
 
 app.use('/api/users', /*authChecker,*/ userRouter);
 

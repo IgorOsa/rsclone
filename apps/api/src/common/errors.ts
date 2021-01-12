@@ -16,7 +16,7 @@ export class NotFoundError extends AppError {
 
 export class UnauthorizedError extends AppError {
   constructor(message: string | ReasonPhrases) {
-    super(message);
+    super(message || ReasonPhrases.UNAUTHORIZED);
     this.status = StatusCodes.UNAUTHORIZED;
   }
 }

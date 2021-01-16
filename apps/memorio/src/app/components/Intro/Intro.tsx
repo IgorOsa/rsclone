@@ -7,18 +7,16 @@ import { Link } from 'react-router-dom';
 export const Intro = () => (
   <section className="intro">
     <Container>
-      <Row style={{ alignItems: "center", height: "100vh"}}>
+      <Row className="d-flex justify-content-between align-items-center" style={{ minHeight: "calc(100vh - 100px)" }}>
         <Col>
           <h2 className="intro__title">The fastest way to learn a language</h2>
           <p className="intro__description">The key? A natural approach to learning real-life language. Jump in and give it a go!</p>
           <Link className="intro__link" to="/signup">Get Started</Link>
         </Col>
-        <Col>
           <img
-            width="400"
-            src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
+            width="450"
+            src="../../../assets/world.png"
           />
-        </Col>
       </Row>
     </Container>
   </section>

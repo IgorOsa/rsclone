@@ -7,7 +7,17 @@
     min-width: 320px;
     margin: 0 auto;
 
-    button {
+    button.btn.btn-primary {
         width: 100%;
+        background-color: #f78410;
+        border-color: #f78410;
+        cursor: pointer;
+        &:hover {
+            background-color: #f78410;
+            border-color: #f78410;
+        }
+        &:active {
+            opacity: .8;
+        }
     }
 }

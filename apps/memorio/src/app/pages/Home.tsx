@@ -6,9 +6,8 @@ import LanguageSection from '../components/LanguageSection/LanguageSection';
 
 export const Home = () => {
   return (
-    <main style={{ minHeight: "100%"}}>
+    <main>
       <Intro />
-      <LanguageSection />
     </main>
   );
 };

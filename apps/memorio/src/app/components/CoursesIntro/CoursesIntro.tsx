@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export const CoursesIntro = () => {
   return (
     <div className="courses-intro">
-      <Container className="container vh-100">
+      <Container className="container">
         <Row className="justify-content-center align-items-center">
           <h2 className="courses-intro__title">Learn up to 22 languages online with Memorio</h2>
           <p className="courses-intro__description">

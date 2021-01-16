@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Message } from '@memorio/api-interfaces';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Main from './components/Main/Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Col, Row, Button } from 'react-bootstrap';
 
 import {
   BrowserRouter as Router,

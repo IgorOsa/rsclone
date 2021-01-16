@@ -8,7 +8,7 @@ export const Bienvenue = () => {
     <Container className="bienvenue" style={{ marginTop: "100px" }}>
       <Row className="align-items-center justify-content-center">
         <span>My lang is:</span>
-        <Form.Control className="lang-select" as="select" size="md">
+        <Form.Control className="lang-select" as="select" size="sm">
           <option>Russian</option>
           <option>English</option>
         </Form.Control>
@@ -33,7 +33,7 @@ export const Bienvenue = () => {
                   <Card.Link href="#">Spanish (as example)</Card.Link>
                 </Card.Title>
               </Card.Body>
-            </Card> 
+            </Card>
         </ListGroup.Item>
       </ListGroup>
     </Container>

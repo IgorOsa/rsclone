@@ -27,7 +27,8 @@ i18n
           "Russian": "Russian",
           "English": "English",
           "I want to learn": "I want to learn",
-          "Spanish": "Spanish"
+          "Spanish": "Spanish",
+          "iconLang": "assets/united-kingdom.svg"
         }
       },
       ru: {
@@ -52,7 +53,8 @@ i18n
           "Russian": "Русский",
           "English": "Английский",
           "I want to learn": "Я хочу выучить",
-          "Spanish": "Испанский"
+          "Spanish": "Испанский",
+          "iconLang": "assets/russia-icon.svg"
         }
       },
     },

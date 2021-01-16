@@ -46,8 +46,8 @@ i18n
         }
       },
     },
-    lng: "en",
-    fallbackLng: "en",
+    // lng: "en",
+    // fallbackLng: "en",
 
     interpolation: {
       escapeValue: false

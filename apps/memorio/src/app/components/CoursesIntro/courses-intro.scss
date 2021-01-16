@@ -1,0 +1,43 @@
+.courses-intro {
+    background-color: #2c3648;
+    color: white;
+
+    .container {
+        max-width: 1000px;
+        min-height: calc(100vh - 100px);
+    }
+
+    &__title {
+        margin-top: 180px;
+        font-size: 4rem;
+        font-weight: 800;
+        width: 80%;
+        text-align: center;
+        transform: rotate(-3deg);
+        // color: yellow;
+        color: #f78410;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        margin-top: 30px;
+    }
+
+    &__link {
+        margin-top: 20px;
+        display: block;
+        color: #2c3648;
+        // background-color: yellow;
+        background-color: #f78410;
+        padding: 10px 15px;
+        border-radius: 5px;
+        line-height: 1.5;
+        font-weight: 500;
+        font-size: 1.2rem;
+        &:hover {
+            text-decoration: none;
+            color: #2c3648;
+            opacity: .9;
+        }
+    }
+}

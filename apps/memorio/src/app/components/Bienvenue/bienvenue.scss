@@ -1,0 +1,14 @@
+.bienvenue {
+    min-height: calc(100vh - 200px);
+    span {
+        margin: 0 5px;
+    }
+
+    .lang-select {
+        width: 200px;
+    }
+
+    .list-group-item {
+        border: none;
+    }
+}

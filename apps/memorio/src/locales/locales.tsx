@@ -22,7 +22,12 @@ i18n
           "loginFormLoginPs": "Enter login",
           "loginFormPassword": "Password",
           "loginFormPasswordPs": "Password",
-          "loginSubmit": "Submit"
+          "loginSubmit": "Submit",
+          "My lang is": "My lang is",
+          "Russian": "Russian",
+          "English": "English",
+          "I want to learn": "I want to learn",
+          "Spanish": "Spanish"
         }
       },
       ru: {
@@ -42,7 +47,12 @@ i18n
           "loginFormLoginPs": "Ваш логин",
           "loginFormPassword": "Пароль",
           "loginFormPasswordPs": "Пароль",
-          "loginSubmit": "Вход"
+          "loginSubmit": "Вход",
+          "My lang is": "Мой язык",
+          "Russian": "Русский",
+          "English": "Английский",
+          "I want to learn": "Я хочу выучить",
+          "Spanish": "Испанский"
         }
       },
     },

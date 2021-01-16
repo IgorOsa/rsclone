@@ -23,6 +23,16 @@ export const get = async (id: string) => {
   return user;
 };
 
+export const getByLogin = async (login: string) => {
+  const user = await User.findOne({ login });
+
+  if (!user) {
+    throw new NotFoundError(`Wrong login data!`);
+  }
+
+  return user;
+};
+
 export const create = async (user: IUser) => {
   try {
     return await User.create(user);

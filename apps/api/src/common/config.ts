@@ -12,3 +12,5 @@ export const DEFAULT_SALT_ROUNDS = parseInt(
   process.env.DEFAULT_SALT_ROUNDS,
   10
 );
+export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
+export const JWT_EXPIRE_TIME = process.env.JWT_EXPIRE_TIME;

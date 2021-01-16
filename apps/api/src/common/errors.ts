@@ -16,14 +16,21 @@ export class NotFoundError extends AppError {
 
 export class UnauthorizedError extends AppError {
   constructor(message: string | ReasonPhrases) {
-    super(message);
+    super(message || ReasonPhrases.UNAUTHORIZED);
     this.status = StatusCodes.UNAUTHORIZED;
   }
 }
 
 export class AuthorizationError extends AppError {
   constructor(message: string | ReasonPhrases) {
-    super(message);
+    super(message || ReasonPhrases.UNAUTHORIZED);
+    this.status = StatusCodes.UNAUTHORIZED;
+  }
+}
+
+export class AuthenticationError extends AppError {
+  constructor(message: string | ReasonPhrases) {
+    super(message || ReasonPhrases.FORBIDDEN);
     this.status = StatusCodes.FORBIDDEN;
   }
 }

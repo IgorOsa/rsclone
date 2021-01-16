@@ -28,7 +28,7 @@ i18n
           "English": "English",
           "I want to learn": "I want to learn",
           "Spanish": "Spanish",
-          "iconLang": "assets/united-kingdom.svg"
+          "iconLang": "assets/united-kingdom-icon.svg"
         }
       },
       ru: {

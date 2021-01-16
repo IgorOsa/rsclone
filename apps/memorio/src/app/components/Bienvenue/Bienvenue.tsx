@@ -17,21 +17,21 @@ export const Bienvenue = () => {
         <span>{t('I want to learn')}...</span>
       </Row>
       <ListGroup>
-        <ListGroup.Item>
-            <Card>
-              <Card.Img variant="top" height="150px" alt="Some beautiful pic" src="holder.js/100px180" />
+        <ListGroup.Item className="item">
+            <Card className="card">
+              <Card.Img variant="top" height="250px" alt="Some beautiful pic" src="../../../assets/eng-flag-1.jpg" />
               <Card.Body>
-                <Card.Title>
+                <Card.Title style={{ textAlign: "center" }}>
                   <Card.Link href="#">{t('English')}</Card.Link>
                 </Card.Title>
               </Card.Body>
             </Card>
         </ListGroup.Item>
-        <ListGroup.Item>
-            <Card>
-              <Card.Img variant="top" height="150px" alt="Some beautiful pic" src="holder.js/100px180" />
+        <ListGroup.Item className="item">
+            <Card className="card">
+              <Card.Img variant="top" height="250px" alt="Some beautiful pic" src="../../../assets/spanish-flag-1.jpeg" />
               <Card.Body>
-                <Card.Title>
+                <Card.Title style={{ textAlign: "center" }}>
                   <Card.Link href="#">{t('Spanish')}</Card.Link>
                 </Card.Title>
               </Card.Body>

@@ -12,7 +12,7 @@ export const MainNav = () => {
       <Nav>
         <Nav.Link><Link to="/courses">{t('Courses')}</Link></Nav.Link>
         <Nav.Link><Link to="/login">{t('Login')}</Link></Nav.Link>
-        <Nav.Link><Link to="/signup">{t('Sign up')}</Link></Nav.Link>
+        <Nav.Link><Link to="/signup/set-course">{t('Sign up')}</Link></Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

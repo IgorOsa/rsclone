@@ -15,6 +15,9 @@ import { Login } from './pages/Login'
 import { SignUp } from './pages/Signup'
 import { Courses } from './pages/Courses'
 
+// import AddUser from './components/Bienvenue/registration/AddUser';
+// import SetCourse from './components/Bienvenue/registration/SetCourse';
+
 export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 

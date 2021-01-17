@@ -10,7 +10,7 @@ export const Intro = () => {
   return (
   <section className="intro">
     <Container>
-      <Row className="d-flex justify-content-between align-items-center" style={{ minHeight: "calc(100vh - 100px)" }}>
+      <Row className="d-flex justify-content-between align-items-center" style={{ minHeight: "calc(100vh - 160px)" }}>
         <Col>
           <h2 className="intro__title">{t('introTitle')}</h2>
           <p className="intro__description">{t('introDescription')}</p>

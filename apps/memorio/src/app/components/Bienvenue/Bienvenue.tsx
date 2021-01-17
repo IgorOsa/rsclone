@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 export const Bienvenue = () => {
   const { t } = useTranslation();
   return (
-    <Container className="bienvenue" style={{ marginTop: "100px" }}>
+    <Container className="bienvenue" style={{ marginTop: "20px" }}>
       <Row className="align-items-center justify-content-center">
         <span>{t('My lang is')}:</span>
         <Form.Control className="lang-select" as="select" size="sm">

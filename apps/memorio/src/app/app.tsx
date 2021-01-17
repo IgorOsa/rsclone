@@ -15,6 +15,7 @@ import { Login } from './pages/Login'
 import { SignUp } from './pages/Signup'
 import { Courses } from './pages/Courses'
 
+import Dashboard from './components/Dashboard/Dashboard';
 export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 
@@ -29,10 +30,9 @@ export const App = () => {
       <Router>
         <Header />
           <Switch>
-            <Route exact path="/" component={ Home } />
-            <Route path="/courses" component={ Courses } />
-            <Route path="/login" component={ Login } />
-            <Route path="/signup" component={ SignUp } />
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
           </Switch>
         <Footer />
       </Router>

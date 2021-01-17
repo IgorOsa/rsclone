@@ -28,12 +28,12 @@ export const App = () => {
     <>
       <Router>
         <Header />
-        <Switch>
-          <Route exact path="/" component={ Home } />
-          <Route path="/courses" component={ Courses } />
-          <Route path="/login" component={ Login } />
-          <Route path="/signup" component={ SignUp } />
-        </Switch>
+          <Switch>
+            <Route exact path="/" component={ Home } />
+            <Route path="/courses" component={ Courses } />
+            <Route path="/login" component={ Login } />
+            <Route path="/signup" component={ SignUp } />
+          </Switch>
         <Footer />
       </Router>
     </>

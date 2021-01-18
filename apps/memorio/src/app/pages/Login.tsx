@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from '../components/LoginForm/LoginForm';
 import AuthService from "../services/auth.service";
-import { IUser } from '@memorio/api-interfaces';
+import { useHistory, useLocation } from 'react-router-dom';
 
-export const Login = (props): JSX.Element => {
+export const Login = (props: { history: string[]; }): JSX.Element => {
+  const history = useHistory();
+  const location = useLocation();
+
   const [login, setLogin] = useState(null);
   const [password, setPassword] = useState(null);
 
@@ -16,8 +19,7 @@ export const Login = (props): JSX.Element => {
       password
     }).then(
       () => {
-        props.history.push("/dashboard");
-        window.location.reload();
+        history.push({ pathname: "/dashboard" });
       }
     );
   }

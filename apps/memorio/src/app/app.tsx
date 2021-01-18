@@ -36,6 +36,7 @@ export const App = () => {
 
     if (user) {
       setCurrentUser(user);
+      setLoggedIn(true);
     }
   }, []);
 

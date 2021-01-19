@@ -15,7 +15,7 @@ const login = async (user: IUser): Promise<IAuthResponse> => {
   return response.data;
 };
 
-const logout = (): void => {
+const logout = async () => {
   localStorage.removeItem('user');
 };
 

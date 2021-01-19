@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
+import { useAuth } from '../../auth/ProvideAuth';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LoginForm.scss';
 
-export const LoginForm = ({ handleSubmit, setLogin, setPassword }) => {
+export const LoginForm = (): JSX.Element => {
   const { t } = useTranslation();
+  const auth = useAuth();
+  const history = useHistory();
+  const [login, setLogin] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const handleSubmit = async () => auth.login({ login, password })
+    .then(() => {
+      history.replace({ pathname: "/dashboard" });
+    });
 
   return (
     <Container className="login-form-container">
-      <Form className="login-form" onSubmit={handleSubmit}>
+      <Form className="login-form">
         <Form.Group controlId="formBasicLogin">
           <Form.Label>{t('loginFormLogin')}</Form.Label>
           <Form.Control
@@ -28,7 +40,7 @@ export const LoginForm = ({ handleSubmit, setLogin, setPassword }) => {
             onChange={e => setPassword(e.target.value)} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" onClick={handleSubmit}>
           {t('loginSubmit')}
         </Button>
       </Form>

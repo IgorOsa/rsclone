@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,25 +17,28 @@ import { Courses } from './pages/Courses'
 import Dashboard from './components/Dashboard/Dashboard';
 import Profile from './components/Profile/Profile';
 import { PrivateRoute } from './auth/PrivateRoute';
+import ProvideAuth from './auth/ProvideAuth';
 
 const App = (): JSX.Element => {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/courses" component={Courses} />
-        <Route exact path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <PrivateRoute path="/dashboard">
-          <Dashboard />
-        </PrivateRoute>
-        <PrivateRoute path="/profile">
-          <Profile />
-        </PrivateRoute>
-      </Switch>
-      <Footer />
-    </Router>
+    <ProvideAuth>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/courses" component={Courses} />
+          <Route exact path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <PrivateRoute path="/profile">
+            <Profile />
+          </PrivateRoute>
+        </Switch>
+        <Footer />
+      </Router>
+    </ProvideAuth>
   );
 };
 

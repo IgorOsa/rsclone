@@ -24,7 +24,7 @@ export default function Dashboard(): JSX.Element {
             </div>
             <div className="col-xs-12 col-sm-9 col-md-3">
             </div>
-            <div className="col-xs-7 col-sm-3 col-md-3">
+            <div className="col-xs-7 col-sm-3 col-md-3 text-right">
               <a
                 href="/repeat"
                 className="btn btn-primary"

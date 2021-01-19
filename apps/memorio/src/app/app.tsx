@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 import { Home } from './pages/Home'
@@ -20,7 +21,33 @@ import Profile from './components/Profile/Profile';
 
 import AuthService from './services/auth.service';
 
-export const App = () => {
+function useAuth() {
+  return AuthService.getCurrentUser();
+}
+
+function PrivateRoute({ children, ...rest }): JSX.Element {
+  const auth = useAuth();
+
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        auth ? (
+          children
+        ) : (
+            <Redirect
+              to={{
+                pathname: "/login",
+                state: { from: location }
+              }}
+            />
+          )
+      }
+    />
+  );
+}
+
+export const App = (): JSX.Element => {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [loggedIn, setLoggedIn] = useState(null);
   const [m, setMessage] = useState<Message>({ message: '' });
@@ -52,8 +79,12 @@ export const App = () => {
         <Route path="/courses" component={Courses} />
         <Route exact path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/profile" component={Profile} />
+        <PrivateRoute path="/dashboard">
+          <Dashboard />
+        </PrivateRoute>
+        <PrivateRoute path="/profile">
+          <Profile />
+        </PrivateRoute>
       </Switch>
       <Footer />
     </Router>

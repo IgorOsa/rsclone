@@ -6,8 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom'
 
 import { Home } from './pages/Home'
@@ -17,34 +16,7 @@ import { Courses } from './pages/Courses'
 
 import Dashboard from './components/Dashboard/Dashboard';
 import Profile from './components/Profile/Profile';
-
-import AuthService from './services/auth.service';
-
-function useAuth() {
-  return AuthService.getCurrentUser();
-}
-
-function PrivateRoute({ children, ...rest }): JSX.Element {
-  const auth = useAuth();
-
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        auth ? (
-          children
-        ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location }
-              }}
-            />
-          )
-      }
-    />
-  );
-}
+import { PrivateRoute } from './auth/PrivateRoute';
 
 const App = (): JSX.Element => {
   return (

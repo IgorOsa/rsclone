@@ -1,11 +1,8 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LoginForm.scss';
-
-const API_LOGIN_ENDPOINT = '/api/login';
 
 export const LoginForm = ({ handleSubmit, setLogin, setPassword }) => {
   const { t } = useTranslation();

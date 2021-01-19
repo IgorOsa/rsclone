@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from '../components/LoginForm/LoginForm';
-import AuthService from "../services/auth.service";
+import AuthService from '../services/auth.service';
 import { useHistory, useLocation } from 'react-router-dom';
 
 export const Login = (props: { history: string[]; }): JSX.Element => {

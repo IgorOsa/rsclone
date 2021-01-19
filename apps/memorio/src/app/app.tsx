@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Message } from '@memorio/api-interfaces';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,30 +46,7 @@ function PrivateRoute({ children, ...rest }): JSX.Element {
   );
 }
 
-export const App = (): JSX.Element => {
-  const [currentUser, setCurrentUser] = useState(undefined);
-  const [loggedIn, setLoggedIn] = useState(null);
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-
-  useEffect(() => {
-    const user = AuthService.getCurrentUser();
-
-    if (user) {
-      setCurrentUser(user);
-      setLoggedIn(true);
-    }
-  }, []);
-
-  const logOut = () => {
-    AuthService.logout();
-  };
-
+const App = (): JSX.Element => {
   return (
     <Router>
       <Header />

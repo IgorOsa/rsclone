@@ -1,13 +1,11 @@
 import { IAuthResponse, IUser } from '@memorio/api-interfaces';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import AuthService from './../services/auth.service';
 
 const authContext = createContext(null);
 
 export default function ProvideAuth({ children }) {
   const auth = useProvideAuth();
-
 
   return (
     <authContext.Provider value={auth}>

@@ -1,8 +1,12 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Dashboard.scss';
 
 export default function Dashboard(): JSX.Element {
+  const { t } = useTranslation();
+
   function handleRepeatClick(e: { preventDefault: () => void; }): void {
     e.preventDefault();
     console.log('Reat hard words btn clicked');
@@ -16,7 +20,7 @@ export default function Dashboard(): JSX.Element {
         <div className="inner container clearfix">
           <div className="row">
             <div className="col-xs-5 col-sm-12 col-md-6">
-              <h1 className="title">Dashboard</h1>
+              <h1 className="title">{t('Dashboard')}</h1>
             </div>
             <div className="col-xs-12 col-sm-9 col-md-3">
             </div>
@@ -25,8 +29,8 @@ export default function Dashboard(): JSX.Element {
                 href="/repeat"
                 className="btn btn-primary"
                 onClick={handleRepeatClick}>
-                Repeat hard words
-                </a>
+                {t('Repeat')}
+              </a>
             </div>
           </div>
         </div>

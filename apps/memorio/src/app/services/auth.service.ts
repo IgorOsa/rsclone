@@ -15,11 +15,11 @@ const login = async (user: IUser): Promise<IAuthResponse> => {
   return response.data;
 };
 
-const logout = () => {
+const logout = (): void => {
   localStorage.removeItem('user');
 };
 
-const getCurrentUser = () => {
+const getCurrentUser = (): IAuthResponse => {
   return JSON.parse(localStorage.getItem('user'));
 };
 

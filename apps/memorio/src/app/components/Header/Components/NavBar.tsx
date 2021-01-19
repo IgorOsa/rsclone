@@ -26,7 +26,7 @@ const MainNav = () => {
               : (
                 <>
                   <Nav.Link><Link to="/dashboard">{t('Dashboard')}</Link></Nav.Link>
-                  <Nav.Link><Link to="/logout">{t('Logout')}</Link></Nav.Link>
+                  <Nav.Link onClick={() => auth.logout()}><Link to="/login">{t('Logout')}</Link></Nav.Link>
                 </>
               )
           }

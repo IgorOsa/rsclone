@@ -1,13 +1,14 @@
 import React, { createContext, useEffect, useState } from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'

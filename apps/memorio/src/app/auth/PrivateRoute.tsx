@@ -3,16 +3,16 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import AuthService from './../services/auth.service';
+import { useAuth } from './ProvideAuth';
 
 export function PrivateRoute({ children, ...rest }): JSX.Element {
-  const auth = AuthService.getCurrentUser();
+  const auth = useAuth();
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth
+        auth.user
           ? (
             children
           ) : (

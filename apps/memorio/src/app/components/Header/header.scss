@@ -1,9 +1,10 @@
 .header {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
+  // position: fixed;
+  // top: 0;
+  // z-index: 1000;
   background-color: #2c3648;
   width: 100%;
+  min-height: 60px;
 
   .btn-primary {
     background-color: transparent;

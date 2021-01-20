@@ -31,7 +31,6 @@
   },
   "private": true,
   "dependencies": {
-    "@types/react-bootstrap": "^0.32.25",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.3",
@@ -70,6 +69,7 @@
     "@nrwl/workspace": "^11.1.5",
     "@testing-library/react": "11.1.2",
     "@types/bcrypt": "^3.0.0",
+    "@types/react-bootstrap": "^0.32.25",
     "@types/dotenv": "^8.2.0",
     "@types/express": "4.17.0",
     "@types/jest": "26.0.8",

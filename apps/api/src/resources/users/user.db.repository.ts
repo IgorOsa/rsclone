@@ -1,5 +1,5 @@
 import User, { IUserModel } from './user.model';
-import { EntityExistsError, NotFoundError } from './../../common/errors';
+import { EntityExistsError, NotFoundError } from './../../errors/errors';
 import { IUser } from '@memorio/api-interfaces';
 
 const MONGO_ENTITY_EXISTS_ERROR_CODE = 11000;

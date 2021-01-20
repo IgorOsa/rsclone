@@ -3,10 +3,10 @@ import * as path from 'path';
 import { PORT } from './common/config';
 import { connectToDB } from './common/db.client';
 import { Message } from '@memorio/api-interfaces';
-import authChecker from './common/authChecker';
+import authChecker from './auth/authChecker';
 import loginRouter from './resources/login/login.router';
 import userRouter from './resources/users/user.router';
-import { errorHandler } from './common/errorHandler';
+import { errorHandler } from './errors/errorHandler';
 
 const app = express();
 

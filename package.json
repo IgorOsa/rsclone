@@ -31,10 +31,6 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@types/react-bootstrap": "^0.32.25",
-=======
->>>>>>> 937e8dd795ffcd9126bc188ad3393deae470f643
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.3",

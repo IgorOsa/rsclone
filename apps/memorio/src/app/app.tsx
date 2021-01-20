@@ -15,24 +15,10 @@ import { Login } from './pages/Login'
 import { SignUp } from './pages/Signup'
 import { Courses } from './pages/Courses'
 
-<<<<<<< HEAD
-// import AddUser from './components/Bienvenue/registration/AddUser';
-// import SetCourse from './components/Bienvenue/registration/SetCourse';
-
-export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-=======
 import Dashboard from './components/Dashboard/Dashboard';
 import Profile from './components/Profile/Profile';
 import { PrivateRoute } from './auth/PrivateRoute';
 import ProvideAuth from './auth/ProvideAuth';
->>>>>>> 937e8dd795ffcd9126bc188ad3393deae470f643
 
 const App = (): JSX.Element => {
   return (

@@ -12,18 +12,6 @@ const MainNav = () => {
   const auth = useAuth();
 
   return (
-<<<<<<< HEAD
-  <Navbar className="nav-bar">
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav>
-        <Nav.Link><Link to="/courses">{t('Courses')}</Link></Nav.Link>
-        <Nav.Link><Link to="/login">{t('Login')}</Link></Nav.Link>
-        <Nav.Link><Link to="/signup/set-course">{t('Sign up')}</Link></Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);}
-=======
     <Navbar className="nav-bar">
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
@@ -47,6 +35,5 @@ const MainNav = () => {
     </Navbar>
   );
 }
->>>>>>> 937e8dd795ffcd9126bc188ad3393deae470f643
 
 export default MainNav;

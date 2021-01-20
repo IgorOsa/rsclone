@@ -32,17 +32,17 @@ export const AddUser = () => {
 
   const nameHandler = (e: any) => {
     setName(e.target.value)
-    if(e.target.value.length < 4) {
-      setNameDirty(true)
+    if (e.target.value.length < 4) {
+      // setNameDirty(true)
     } else {
-      setNameDirty(false)
+      // setNameDirty(false)
     }
   }
 
   const loginHandler = (e: any) => {
     const re = /^(\w+){4,32}$/
     setLogin(e.target.value)
-    if(e.target.value.length < 4 && e.target.value.length  && !re.test(String(e.target.value))) {
+    if (e.target.value.length < 4 && e.target.value.length && !re.test(String(e.target.value))) {
       setLoginDirty(true)
     } else {
       setLoginDirty(false)
@@ -51,7 +51,7 @@ export const AddUser = () => {
 
   const passwordHandler = (e: any) => {
     setPassword(e.target.value)
-    if(e.target.value.length < 4 && e.target.value.length) {
+    if (e.target.value.length < 4 && e.target.value.length) {
       setPasswordDirty(true)
     } else {
       setPasswordDirty(false)
@@ -66,57 +66,57 @@ export const AddUser = () => {
       login: login,
       password: password,
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   return (
     <Container className="bienvenue" style={{ marginTop: "20px" }}>
       <Form className="registration-form">
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>{ t('Name') }</Form.Label>
+          <Form.Label>{t('Name')}</Form.Label>
           <Form.Control
             type="text"
-            placeholder={ t('registrationFormName') }
+            placeholder={t('registrationFormName')}
             value={name}
             onChange={(e) => nameHandler(e)}
           />
         </Form.Group>
 
         <Form.Group controlId="formBasicEmail">
-            <Form.Label>{ t('Login') }</Form.Label>
-            {(loginDirty && loginError) && <div style={{ color: "red" }}>{shortError}</div>}
-            <Form.Control 
-              // onBlur={(e: any) => blurHandler(e)} 
-              name='login'
-              type="text"
-              placeholder={ t('registrationFormLogin') }
-              value={login}
-              onChange={(e) => loginHandler(e)}
-            />
+          <Form.Label>{t('Login')}</Form.Label>
+          {(loginDirty && loginError) && <div style={{ color: "red" }}>{shortError}</div>}
+          <Form.Control
+            // onBlur={(e: any) => blurHandler(e)}
+            name='login'
+            type="text"
+            placeholder={t('registrationFormLogin')}
+            value={login}
+            onChange={(e) => loginHandler(e)}
+          />
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-            <Form.Label>{ t('Password') }</Form.Label>
-            {(passwordDirty && passwordError) && <div style={{ color: "red" }}>{shortError}</div>}
-            <Form.Control
-              // onBlur={(e: any) => blurHandler(e)} 
-              name='password'
-              type="password"
-              placeholder={ t('registrationFormPassword') }
-              value={password}
-              onChange={(e) => passwordHandler(e)}
-            />
+          <Form.Label>{t('Password')}</Form.Label>
+          {(passwordDirty && passwordError) && <div style={{ color: "red" }}>{shortError}</div>}
+          <Form.Control
+            // onBlur={(e: any) => blurHandler(e)}
+            name='password'
+            type="password"
+            placeholder={t('registrationFormPassword')}
+            value={password}
+            onChange={(e) => passwordHandler(e)}
+          />
         </Form.Group>
-        <Button 
-          variant="primary" 
+        <Button
+          variant="primary"
           type="submit"
         >
-          { t('Register') }
+          {t('Register')}
         </Button>
       </Form>
     </Container>

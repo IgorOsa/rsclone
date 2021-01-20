@@ -115,7 +115,6 @@ export const AddUser = () => {
         <Button 
           variant="primary" 
           type="submit"
-          onSubmit={ () => formSubmit() }
         >
           { t('Register') }
         </Button>

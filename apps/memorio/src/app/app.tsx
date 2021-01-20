@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@memorio/api-interfaces';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React, { createContext, useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
 import { SignUp } from './pages/Signup'
 import { Courses } from './pages/Courses'
 
-export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
+import Dashboard from './components/Dashboard/Dashboard';
+import Profile from './components/Profile/Profile';
+import { PrivateRoute } from './auth/PrivateRoute';
+import ProvideAuth from './auth/ProvideAuth';
 
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-
+const App = (): JSX.Element => {
   return (
-    <>
+    <ProvideAuth>
       <Router>
         <Header />
-          <Switch>
-            <Route exact path="/" component={ Home } />
-            <Route path="/courses" component={ Courses } />
-            <Route path="/login" component={ Login } />
-            <Route path="/signup" component={ SignUp } />
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/courses" component={Courses} />
+          <Route exact path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <PrivateRoute path="/profile">
+            <Profile />
+          </PrivateRoute>
+        </Switch>
         <Footer />
       </Router>
-    </>
+    </ProvideAuth>
   );
 };
 

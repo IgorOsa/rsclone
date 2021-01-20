@@ -7,3 +7,10 @@ export interface IUser {
   login: string;
   password: string;
 }
+
+export interface IAuthResponse {
+  message: string;
+  name: string;
+  token: string;
+  userId: string;
+}

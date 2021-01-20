@@ -28,7 +28,10 @@ i18n
           "English": "English",
           "I want to learn": "I want to learn",
           "Spanish": "Spanish",
-          "iconLang": "assets/united-kingdom-icon.svg"
+          "iconLang": "assets/united-kingdom-icon.svg",
+          "Dashboard": "Dashboard",
+          "Logout": "Logout",
+          "Repeat": "Repeat",
         }
       },
       ru: {
@@ -54,7 +57,10 @@ i18n
           "English": "Английский",
           "I want to learn": "Я хочу выучить",
           "Spanish": "Испанский",
-          "iconLang": "assets/russia-icon.svg"
+          "iconLang": "assets/russia-icon.svg",
+          "Dashboard": "Главная",
+          "Logout": "Выход",
+          "Repeat": "Повторение",
         }
       },
     },

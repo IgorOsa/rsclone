@@ -15,7 +15,7 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
   {
     _id: {
       type: String,
-      default: uuid,
+      default: () => uuid.v1(),
     },
     name: {
       type: String,

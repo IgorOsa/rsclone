@@ -34,7 +34,9 @@ i18n
           "registrationFormPassword": "Create a password...",
           "Name": "Name",
           "Password": "Password",
-          "Register": "Register"
+          "Register": "Register",
+          "Cant be empty": "Cant be empty",
+          "TooShort": "At least 4 characters"
         }
       },
       ru: {
@@ -66,7 +68,9 @@ i18n
           "registrationFormPassword": "Придумайте пароль...",
           "Name": "Имя",
           "Password": "Пароль",
-          "Register": "Зарегистрироваться"
+          "Register": "Зарегистрироваться",
+          "Cant be empty": "Это поле обязательное",
+          "TooShort": "Минимум 4 символа латиницей"
         }
       },
     },

@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
 
-import { JWT_SECRET_KEY } from './config';
-import { UnauthorizedError } from './../common/errors';
-import { wrap } from './asyncWrapper';
+import { JWT_SECRET_KEY } from './../common/config';
+import { UnauthorizedError } from './../errors/errors';
+import { wrap } from './../common/asyncWrapper';
 
 export default wrap(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {

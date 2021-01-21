@@ -1,16 +1,21 @@
 import * as express from 'express';
 import * as path from 'path';
+import * as cors from 'cors';
+import * as helmet from 'helmet';
 import { PORT } from './common/config';
 import { connectToDB } from './common/db.client';
 import { Message } from '@memorio/api-interfaces';
-import authChecker from './common/authChecker';
+import authChecker from './auth/authChecker';
 import loginRouter from './resources/login/login.router';
+import registerRouter from './resources/register/register.router';
 import userRouter from './resources/users/user.router';
-import { errorHandler } from './common/errorHandler';
+import { errorHandler } from './errors/errorHandler';
 
 const app = express();
-
+app.disable('x-powered-by');
 app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../memorio')));
@@ -26,7 +31,7 @@ app.get('/api', (req, res, next) => {
 });
 
 app.use('/api/login', loginRouter);
-
+app.use('/api/register', registerRouter);
 app.use('/api/users', authChecker, userRouter);
 
 app.use(errorHandler);

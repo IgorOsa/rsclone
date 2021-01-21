@@ -1,7 +1,7 @@
 import { IUser } from '@memorio/api-interfaces';
 import * as mongoose from 'mongoose';
 import * as uuid from 'uuid';
-import { hashPassword } from './../../common/hashHelpers';
+import { hashPassword } from './../../auth/hashHelpers';
 
 export interface IUserModel extends IUser, mongoose.Document {
   id?: string;
@@ -15,7 +15,7 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
   {
     _id: {
       type: String,
-      default: uuid,
+      default: () => uuid.v1(),
     },
     name: {
       type: String,
@@ -35,7 +35,6 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
   },
   {
     collection: 'users',
-    versionKey: false,
   }
 );
 

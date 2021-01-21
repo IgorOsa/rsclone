@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import './courses-intro.scss';
 import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";

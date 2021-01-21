@@ -1,5 +1,5 @@
 import * as bcrypt from 'bcrypt';
-import { DEFAULT_SALT_ROUNDS } from './config';
+import { DEFAULT_SALT_ROUNDS } from './../common/config';
 
 export const hashPassword = async (password: string): Promise<string> => {
   const salt = await bcrypt.genSalt(DEFAULT_SALT_ROUNDS);

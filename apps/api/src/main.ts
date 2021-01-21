@@ -1,5 +1,7 @@
 import * as express from 'express';
 import * as path from 'path';
+import * as cors from 'cors';
+import * as helmet from 'helmet';
 import { PORT } from './common/config';
 import { connectToDB } from './common/db.client';
 import { Message } from '@memorio/api-interfaces';
@@ -10,8 +12,10 @@ import userRouter from './resources/users/user.router';
 import { errorHandler } from './errors/errorHandler';
 
 const app = express();
-
+app.disable('x-powered-by');
 app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../memorio')));

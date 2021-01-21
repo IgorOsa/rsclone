@@ -35,7 +35,6 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
   },
   {
     collection: 'users',
-    versionKey: false,
   }
 );
 

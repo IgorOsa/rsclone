@@ -56,7 +56,7 @@ async function updateHashedPassword(next) {
 userSchema.pre('save', setHashedPassword);
 userSchema.pre('findOneAndUpdate', updateHashedPassword);
 
-userSchema.method('toResponse', function () {
+userSchema.method('toResponse', function (this: IUserModel) {
   const { _id, ...rest } = this.toJSON();
   delete rest.password;
   delete rest.__v;

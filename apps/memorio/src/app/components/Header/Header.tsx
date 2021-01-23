@@ -9,7 +9,7 @@ import { Container, Col, Row, Button } from 'react-bootstrap';
 export const Header = () => (
   <header className="header">
     <Container>
-      <Row style={{ alignItems: "center" }}>
+      <Row style={{ alignItems: 'center' }}>
         <Col xs lg="2">
           <Logo />
         </Col>

@@ -7,11 +7,7 @@ const authContext = createContext(null);
 export default function ProvideAuth({ children }) {
   const auth = useProvideAuth();
 
-  return (
-    <authContext.Provider value={auth}>
-      {children}
-    </authContext.Provider>
-  );
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
 export function useAuth() {
@@ -27,7 +23,7 @@ export function useProvideAuth() {
     if (user) {
       setUser(user);
     }
-  }, [])
+  }, []);
 
   const login = async (user: IUser) => {
     setUser(await AuthService.login(user));
@@ -44,7 +40,6 @@ export function useProvideAuth() {
     user,
     login,
     logout,
-    getCurrentUser
+    getCurrentUser,
   };
 }
-

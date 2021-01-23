@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './bienvenue.scss'
-import SetCourse from './registration/SetCourse'
-import AddUser from './registration/AddUser'
+import './bienvenue.scss';
+import SetCourse from './registration/SetCourse';
+import AddUser from './registration/AddUser';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export const Bienvenue = () => {
   // const [userLang, setUserLang] = useState(String)
@@ -22,13 +18,13 @@ export const Bienvenue = () => {
   // };
 
   return (
-    <Router>
+    
       <Switch>
-        <Route path="/signup/set-course" component={ SetCourse } />
-        <Route path="/signup/add-user" component={ AddUser } />
+        <Route path="/signup/set-course" component={SetCourse} />
+        <Route path="/signup/add-user" component={AddUser} />
       </Switch>
-    </Router>
-  )
+   
+  );
 };
 
 export default Bienvenue;

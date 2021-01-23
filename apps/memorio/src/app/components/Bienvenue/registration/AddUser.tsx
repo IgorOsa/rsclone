@@ -1,123 +1,90 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
 import axios from 'axios';
+import * as Yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../bienvenue.scss'
+import '../bienvenue.scss';
 import { Container, Form, Button } from 'react-bootstrap';
-import { useTranslation } from "react-i18next";
+import { useSSR, useTranslation } from 'react-i18next';
 
 export const AddUser = () => {
   const { t } = useTranslation();
 
-  const [name, setName] = useState()
-  const [login, setLogin] = useState()
-  const [loginDirty, setLoginDirty] = useState(false)
-  const [loginError, setLoginError] = useState(t('Cant be empty'))
-  const [password, setPassword] = useState()
-  const [passwordDirty, setPasswordDirty] = useState(false)
-  const [passwordError, setPasswordError] = useState(t('Cant be empty'))
-  const [shortError, setShortError] = useState(t('TooShort'))
-  const [formValid, setFormValid] = useState(false)
-
-  // const blurHandler = (e: { target: { name: any; }; }) => {
-  //   switch (e.target.name) {
-  //     case 'login':
-  //       setLoginDirty(true)
-  //       break;
-
-  //     case 'password':
-  //       setPasswordDirty(true)
-  //       break;
-  //   }
-  // }
-
-  const nameHandler = (e: any) => {
-    setName(e.target.value)
-    if (e.target.value.length < 4) {
-      // setNameDirty(true)
-    } else {
-      // setNameDirty(false)
-    }
-  }
-
-  const loginHandler = (e: any) => {
-    const re = /^(\w+){4,32}$/
-    setLogin(e.target.value)
-    if (e.target.value.length < 4 && e.target.value.length && !re.test(String(e.target.value))) {
-      setLoginDirty(true)
-    } else {
-      setLoginDirty(false)
-    }
-  }
-
-  const passwordHandler = (e: any) => {
-    setPassword(e.target.value)
-    if (e.target.value.length < 4 && e.target.value.length) {
-      setPasswordDirty(true)
-    } else {
-      setPasswordDirty(false)
-    }
-  }
-
-  // libs\api-interfaces\src\lib\api-interfaces.ts
-
-  const formSubmit = () => {
-    axios.post('/libs/api-interfaces/src/lib/api-interfaces.ts', {
-      name: name,
-      login: login,
-      password: password,
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      login: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      login: Yup.string()
+        .min(2, t('Minimum 2 characters'))
+        .max(15, t('Maximum 15 characters'))
+        .required(t('Cant be empty')),
+      name: Yup.string(),
+      password: Yup.string()
+        .min(4, t('Minimum 4 characters'))
+        .required(t('Cant be empty')),
+    }),
+    onSubmit: (values) => {
+      try {
+        const response = axios.post('/api/register', values);
+      } catch (e) {
+        console.log(`😱 request failed: ${e}`);
+      }
+      
+    },
+  });
 
   return (
-    <Container className="bienvenue" style={{ marginTop: "20px" }}>
-      <Form className="registration-form">
+    <Container className="bienvenue" style={{ marginTop: '20px' }}>
+      <Form 
+        className="registration-form"
+        onSubmit={formik.handleSubmit}
+      >
         <Form.Group controlId="formBasicEmail">
           <Form.Label>{t('Name')}</Form.Label>
           <Form.Control
-            type="text"
+            type="name"
+            name="name"
             placeholder={t('registrationFormName')}
-            value={name}
-            onChange={(e) => nameHandler(e)}
+            value={formik.values.name}
+            onChange={formik.handleChange}
           />
         </Form.Group>
-
         <Form.Group controlId="formBasicEmail">
           <Form.Label>{t('Login')}</Form.Label>
-          {(loginDirty && loginError) && <div style={{ color: "red" }}>{shortError}</div>}
+          {formik.errors.login && formik.touched.login && (
+            <span style={{color: "red"}}>{formik.errors.login}</span>
+          )}
           <Form.Control
-            // onBlur={(e: any) => blurHandler(e)}
-            name='login'
-            type="text"
+            name="login"
+            type="login"
             placeholder={t('registrationFormLogin')}
-            value={login}
-            onChange={(e) => loginHandler(e)}
+            value={formik.values.login}
+            onChange={formik.handleChange}
           />
         </Form.Group>
-
         <Form.Group controlId="formBasicPassword">
           <Form.Label>{t('Password')}</Form.Label>
-          {(passwordDirty && passwordError) && <div style={{ color: "red" }}>{shortError}</div>}
+          {formik.errors.password && formik.touched.password && (
+            <span style={{color: "red"}}>{formik.errors.password}</span>
+          )}
           <Form.Control
-            // onBlur={(e: any) => blurHandler(e)}
-            name='password'
+            name="password"
             type="password"
             placeholder={t('registrationFormPassword')}
-            value={password}
-            onChange={(e) => passwordHandler(e)}
-          />
-        </Form.Group>
+            value={formik.values.password}
+            onChange={formik.handleChange}
+          />  
+        </Form.Group> 
         <Button
           variant="primary"
           type="submit"
         >
-          {t('Register')}
-        </Button>
+         {t('Register')}
+        </Button> 
       </Form>
     </Container>
   );

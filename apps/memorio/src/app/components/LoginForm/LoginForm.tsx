@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../auth/ProvideAuth';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,9 +14,9 @@ export const LoginForm = (): JSX.Element => {
   const [login, setLogin] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const handleSubmit = async () => auth.login({ login, password })
-    .then(() => {
-      history.replace({ pathname: "/dashboard" });
+  const handleSubmit = async () =>
+    auth.login({ login, password }).then(() => {
+      history.replace({ pathname: '/dashboard' });
     });
 
   return (
@@ -28,7 +28,8 @@ export const LoginForm = (): JSX.Element => {
             required
             type="text"
             placeholder={t('loginFormLoginPs')}
-            onChange={e => setLogin(e.target.value)} />
+            onChange={(e) => setLogin(e.target.value)}
+          />
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
@@ -37,7 +38,8 @@ export const LoginForm = (): JSX.Element => {
             required
             type="password"
             placeholder={t('loginFormPasswordPs')}
-            onChange={e => setPassword(e.target.value)} />
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </Form.Group>
 
         <Button variant="primary" onClick={handleSubmit}>

@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm/LoginForm';
 
 export const Login = (): JSX.Element => {
   return (
-    <main style={{ height: "calc(100vh - 210px)" }}>
+    <main style={{ height: 'calc(100vh - 210px)' }}>
       <LoginForm />
     </main>
   );

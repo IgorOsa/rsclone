@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CoursesIntro from '../components/CoursesIntro/CoursesIntro'
+import CoursesIntro from '../components/CoursesIntro/CoursesIntro';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Courses = () => {

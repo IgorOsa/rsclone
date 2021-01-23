@@ -1,44 +1,44 @@
 .bienvenue {
-    min-height: calc(100vh - 210px);
-    span {
-        margin: 0 5px;
+  min-height: calc(100vh - 210px);
+  span {
+    margin: 0 5px;
+  }
+
+  .lang-select {
+    width: 200px;
+  }
+
+  .list-group-item {
+    border: none;
+  }
+
+  .item {
+    .card {
+      &:hover {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.12);
+      }
     }
+  }
 
-    .lang-select {
-        width: 200px;
-    }
+  .registration-form {
+    width: 30%;
+    min-width: 320px;
+    margin: 50px auto 0;
 
-    .list-group-item {
-        border: none;
-    }
+    button.btn.btn-primary {
+      width: 100%;
+      background-color: #f78410;
+      border-color: #f78410;
+      cursor: pointer;
 
-    .item {
-        .card {
-            &:hover {
-                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.12);
-            }
-        }
-    } 
-
-    .registration-form {
-        width: 30%;
-        min-width: 320px;
-        margin: 50px auto 0;
-
-        button.btn.btn-primary {
-        width: 100%;
+      &:hover {
         background-color: #f78410;
         border-color: #f78410;
-        cursor: pointer;
+      }
 
-            &:hover {
-                background-color: #f78410;
-                border-color: #f78410;
-            }
-
-            &:active {
-                opacity: .8;
-            }
-        }
+      &:active {
+        opacity: 0.8;
+      }
     }
+  }
 }

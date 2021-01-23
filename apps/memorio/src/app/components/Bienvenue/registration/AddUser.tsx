@@ -10,6 +10,7 @@ import { useSSR, useTranslation } from 'react-i18next';
 
 export const AddUser = () => {
   const { t } = useTranslation();
+  const [newUserStatus, setNewUserStatus] = useState(false)
 
   const formik = useFormik({
     initialValues: {
@@ -30,6 +31,7 @@ export const AddUser = () => {
     onSubmit: (values) => {
       try {
         const response = axios.post('/api/register', values);
+        setNewUserStatus(true)
       } catch (e) {
         console.log(`😱 request failed: ${e}`);
       }
@@ -39,7 +41,7 @@ export const AddUser = () => {
 
   return (
     <Container className="bienvenue" style={{ marginTop: '20px' }}>
-      <Form 
+      { newUserStatus ? <Form 
         className="registration-form"
         onSubmit={formik.handleSubmit}
       >
@@ -82,10 +84,11 @@ export const AddUser = () => {
         <Button
           variant="primary"
           type="submit"
+          onClick={() => console.log(formik)}
         >
          {t('Register')}
         </Button> 
-      </Form>
+      </Form> : <Button href="/login" variant="primary">{t('Login')}</Button> }
     </Container>
   );
 };

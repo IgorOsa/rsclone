@@ -41,7 +41,7 @@ export const AddUser = () => {
 
   return (
     <Container className="bienvenue" style={{ marginTop: '20px' }}>
-      { newUserStatus ? <Form 
+      { !newUserStatus ? <Form 
         className="registration-form"
         onSubmit={formik.handleSubmit}
       >

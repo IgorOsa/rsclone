@@ -14,3 +14,10 @@ export interface IAuthResponse {
   token: string;
   userId: string;
 }
+
+export interface ICourse {
+  title: string;
+  description: string;
+  owner: string;
+  available: boolean;
+}

@@ -40,6 +40,9 @@ i18n
           "Dashboard": "Dashboard",
           "Logout": "Logout",
           "Repeat": "Repeat",
+          'Please input a valid login': 'Please input a valid login',
+          'Please input a valid password': 'Please input a valid password',
+          'Wrong login/password combination!': 'Wrong login/password combination!',
         }
       },
       ru: {
@@ -77,6 +80,9 @@ i18n
           "Dashboard": "Главная",
           "Logout": "Выход",
           "Repeat": "Повторение",
+          'Please input a valid login': 'Введите логин',
+          'Please input a valid password': 'Введите пароль',
+          'Wrong login/password combination!': 'Неверная комбинация логин/пароль!',
         }
       },
     },

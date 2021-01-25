@@ -20,8 +20,14 @@ export const create = async (user: IUserRequest) => {
   return userEntity;
 };
 
-export const update = (id: string, user: IUserModel) =>
-  usersRepo.update(id, user);
+export const update = async (id: string, user: IUserRequest & IUserModel) => {
+  if (user.profile) {
+    const { profile } = user;
+    await profileService.update(id, JSON.parse(profile));
+  }
+
+  return usersRepo.update(id, user);
+};
 
 // const remove = async (id) => {
 //   return usersRepo.remove(id);

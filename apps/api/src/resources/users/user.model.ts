@@ -44,7 +44,7 @@ async function setHashedPassword(next) {
 }
 
 async function updateHashedPassword(next) {
-  if (this._update.password) {
+  if (this._update && this._update.password) {
     const newPassword = await hashPassword(this._update.password);
     this._update.password = newPassword;
   }
@@ -58,7 +58,9 @@ userSchema.pre('findOneAndUpdate', updateHashedPassword);
 
 userSchema.method('toResponse', function (this: IUserModel) {
   const { _id, ...rest } = this.toJSON();
-  delete rest.password;
+  if (rest.password) {
+    delete rest.password;
+  }
   delete rest.__v;
   return { id: _id, ...rest };
 });

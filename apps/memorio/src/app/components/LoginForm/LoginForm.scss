@@ -1,23 +1,22 @@
 .login-form-container {
-
 }
 
 .login-form {
-    width: 30%;
-    min-width: 320px;
-    margin: 50px auto 0;
+  width: 30%;
+  min-width: 320px;
+  margin: 50px auto 0;
 
-    button.btn.btn-primary {
-        width: 100%;
-        background-color: #f78410;
-        border-color: #f78410;
-        cursor: pointer;
-        &:hover {
-            background-color: #f78410;
-            border-color: #f78410;
-        }
-        &:active {
-            opacity: .8;
-        }
+  button.btn.btn-primary {
+    width: 100%;
+    background-color: #f78410;
+    border-color: #f78410;
+    cursor: pointer;
+    &:hover {
+      background-color: #f78410;
+      border-color: #f78410;
     }
+    &:active {
+      opacity: 0.8;
+    }
+  }
 }

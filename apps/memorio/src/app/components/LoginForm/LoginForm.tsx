@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Container, Button, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../auth/ProvideAuth';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -1,19 +1,15 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-import { Home } from './pages/Home'
-import { Login } from './pages/Login'
-import { SignUp } from './pages/Signup'
-import { Courses } from './pages/Courses'
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
+import { SignUp } from './pages/Signup';
+import { Courses } from './pages/Courses';
 
 import Dashboard from './components/Dashboard/Dashboard';
 import Profile from './components/Profile/Profile';

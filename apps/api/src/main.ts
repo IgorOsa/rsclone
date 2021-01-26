@@ -6,6 +6,7 @@ import { PORT } from './common/config';
 import { connectToDB } from './common/db.client';
 import { Message } from '@memorio/api-interfaces';
 import authChecker from './auth/authChecker';
+import coursesRouter from './resources/courses/course.router';
 import loginRouter from './resources/login/login.router';
 import registerRouter from './resources/register/register.router';
 import userRouter from './resources/users/user.router';
@@ -33,6 +34,7 @@ app.get('/api', (req, res, next) => {
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
 app.use('/api/users', authChecker, userRouter);
+app.use('/api/courses', authChecker, coursesRouter);
 
 app.use(errorHandler);
 

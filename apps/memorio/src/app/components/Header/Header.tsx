@@ -4,12 +4,12 @@ import NavBar from './Components/NavBar';
 import Language from './Components/Language';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './header.scss';
-import { Container, Col, Row, Button } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 
 export const Header = () => (
   <header className="header">
     <Container>
-      <Row style={{ alignItems: "center" }}>
+      <Row style={{ alignItems: 'center' }}>
         <Col xs lg="2">
           <Logo />
         </Col>

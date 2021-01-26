@@ -20,22 +20,24 @@ export const LanguageSection = () => {
           </div>
         </Row>
         <Row>
-          <Card className="slide card" style={{ border: "none" }}>
+          <Card className="slide card" style={{ border: 'none' }}>
             <Row>
               <Col>
-                <Card.Title>Lorem ipsum dolor sit amet, consectetur adipisicing.</Card.Title>
+                <Card.Title>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing.
+                </Card.Title>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                  Perspiciatis unde quos ipsa assumenda corrupti odio quod 
-                  cumque exercitationem harum expedita doloremque neque, 
-                  nihil molestiae, voluptatem delectus repellat 
-                  deleniti quae dicta consectetur. Ad sunt nulla ducimus!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis unde quos ipsa assumenda corrupti odio quod
+                  cumque exercitationem harum expedita doloremque neque, nihil
+                  molestiae, voluptatem delectus repellat deleniti quae dicta
+                  consectetur. Ad sunt nulla ducimus!
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Col>
               <Col>
-                <img 
-                  width="250" 
+                <img
+                  width="250"
                   src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
                 />
               </Col>

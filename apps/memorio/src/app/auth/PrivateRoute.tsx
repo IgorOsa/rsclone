@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Route,
-  Redirect
-} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from './ProvideAuth';
 
 export function PrivateRoute({ children, ...rest }): JSX.Element {
@@ -12,15 +9,17 @@ export function PrivateRoute({ children, ...rest }): JSX.Element {
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user
-          ? (
-            children
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location }
-              }} />
-          )} />
+        auth.user ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
   );
 }

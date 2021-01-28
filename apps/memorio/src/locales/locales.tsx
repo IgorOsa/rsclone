@@ -46,6 +46,11 @@ i18n
           'Please input a valid login': 'Please input a valid login',
           'Please input a valid password': 'Please input a valid password',
           'Wrong login/password combination!': 'Wrong login/password combination!',
+          'Profile': 'Profile',
+          'User\'s Profile': 'User\'s Profile',
+          'Upload New Picture': 'Upload New Picture',
+          'View Profile': 'View Profile',
+          'Connect with Facebook': 'Connect with Facebook',
         }
       },
       ru: {
@@ -89,6 +94,11 @@ i18n
           'Please input a valid login': 'Введите логин',
           'Please input a valid password': 'Введите пароль',
           'Wrong login/password combination!': 'Неверная комбинация логин/пароль!',
+          'Profile': 'Профиль',
+          'User\'s Profile': 'Профиль пользователя',
+          'Upload New Picture': 'Загрузить новое изображение',
+          'View Profile': 'Посмотреть профиль',
+          'Connect with Facebook': 'Подключиться через Facebook',
         }
       },
     },

@@ -4,7 +4,7 @@ import '../bienvenue.scss';
 import { ListGroup, Container, Form, Row, Card, Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-export const SetCourse = ({}) => {
+export const SetCourse = () => {
   const { t } = useTranslation();
   const [userLang, setUserLang] = useState('russian');
   const [userLearningLang, setUserLearningLang] = useState(String);

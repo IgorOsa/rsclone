@@ -10,7 +10,10 @@ const signup = (user: IUser) => {
 const login = async (user: IUser): Promise<IAuthResponse> => {
   const response = await axios.post(API_URL + 'login', user);
   if (response.data.token) {
-    localStorage.setItem('user', JSON.stringify(response.data));
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ ...response.data, login: user.login })
+    );
   }
   return response.data;
 };

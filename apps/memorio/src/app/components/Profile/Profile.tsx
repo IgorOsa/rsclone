@@ -6,9 +6,11 @@ import './Profile.scss';
 
 export default function Preferences() {
   const { t, i18n } = useTranslation();
-  const { user } = useAuth();
+  const auth = useAuth();
   const [languages, setLanguages] = useState(i18n.languages)
   const [currentUserLang, setCurrentUserLang] = useState(i18n.language);
+
+  const { user } = auth;
 
   const child = () => {
     return (
@@ -64,7 +66,7 @@ export default function Preferences() {
               <input
                 type="text"
                 name="login"
-                value={''}
+                value={user.login}
                 onChange={(e) => e.preventDefault()}
               />
             </div>

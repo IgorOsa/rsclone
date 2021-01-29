@@ -62,7 +62,7 @@ export default function Preferences() {
           </div>
           <div className="col-md-8">
             <div className="field field-inline">
-              <label>Логин</label>
+              <label>{t('Username')}</label>
               <input
                 type="text"
                 name="login"
@@ -72,7 +72,7 @@ export default function Preferences() {
             </div>
 
             <div className="field field-inline">
-              <label>Имя</label>
+              <label>{t('Name')}</label>
               <input
                 type="text"
                 name="name"
@@ -83,7 +83,7 @@ export default function Preferences() {
             </div>
 
             <div className="field field-inline">
-              <label>Язык</label>
+              <label>{t('Language')}</label>
               <select name="language" id="id_language" defaultValue={currentUserLang}>
                 {languages.map(item => <option key={item} value={item}>{i18n.options.resources[item].langName}</option>)}
               </select>
@@ -92,7 +92,7 @@ export default function Preferences() {
 
             <div className="field field-inline">
               <button type="submit" className="btn btn-primary">
-                Сохранить
+                {t('Save changes')}
               </button>
             </div>
 

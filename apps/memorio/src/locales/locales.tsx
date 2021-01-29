@@ -52,6 +52,9 @@ i18n
           'Upload New Picture': 'Upload New Picture',
           'View Profile': 'View Profile',
           'Connect with Facebook': 'Connect with Facebook',
+          'Username': 'Username',
+          'Save changes': 'Save changes',
+          'Language': 'Language',
         }
       },
       ru: {
@@ -101,6 +104,9 @@ i18n
           'Upload New Picture': 'Загрузить новое изображение',
           'View Profile': 'Посмотреть профиль',
           'Connect with Facebook': 'Подключиться через Facebook',
+          'Username': 'Логин',
+          'Language': 'Язык',
+          'Save changes': 'Сохранить',
         }
       },
     },

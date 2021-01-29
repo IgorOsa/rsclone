@@ -6,6 +6,7 @@ i18n
   .init({
     resources: {
       en: {
+        langName: "English",
         translation: {
           "Courses": "Courses",
           "Login": "Login",
@@ -54,6 +55,7 @@ i18n
         }
       },
       ru: {
+        langName: "Русский",
         translation: {
           "Courses": "Курсы",
           "Login": "Логин",
@@ -102,8 +104,6 @@ i18n
         }
       },
     },
-    // lng: "en",
-    // fallbackLng: "en",
 
     interpolation: {
       escapeValue: false

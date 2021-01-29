@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../auth/ProvideAuth';
 import Subheader from '../Subheader/Subheader';
 import './Profile.scss';
 
 export default function Preferences() {
-  const { t } = useTranslation();
-  const auth = useAuth();
-
-  const { user } = auth;
+  const { t, i18n } = useTranslation();
+  const { user } = useAuth();
+  const [languages, setLanguages] = useState(i18n.languages)
+  const [currentUserLang, setCurrentUserLang] = useState(i18n.language);
 
   const child = () => {
     return (
@@ -82,9 +82,8 @@ export default function Preferences() {
 
             <div className="field field-inline">
               <label>Язык</label>
-              <select name="language" id="id_language" defaultValue="ru">
-                <option value="en">English</option>
-                <option value="ru">Русский</option>
+              <select name="language" id="id_language" defaultValue={currentUserLang}>
+                {languages.map(item => <option key={item} value={item}>{i18n.options.resources[item].langName}</option>)}
               </select>
             </div>
 

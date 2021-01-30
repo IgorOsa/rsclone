@@ -9,9 +9,10 @@ export interface IUser {
 }
 
 export interface IUserRequest extends IUser {
-  profile?: string;
+  profile?: IUserProfile;
 }
 
+export type IUserUpdateRequest = Partial<IUserRequest>;
 export interface IUserProfile {
   lang?: string;
   lang2learn?: string;
@@ -23,6 +24,7 @@ export interface IAuthResponse {
   name: string;
   token: string;
   userId: string;
+  username?: string;
 }
 
 export interface ICourse {

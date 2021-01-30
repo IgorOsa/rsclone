@@ -1,6 +1,10 @@
-import { IUserRequest } from '@memorio/api-interfaces';
+import {
+  IUserProfile,
+  IUserRequest,
+  IUserUpdateRequest,
+} from '@memorio/api-interfaces';
 import * as usersRepo from './user.db.repository';
-import { IUserModel, IUserResponse } from './user.model';
+import { IUserResponse } from './user.model';
 import * as profileService from './profile.service';
 
 export const getAll = () => usersRepo.getAll();
@@ -13,10 +17,10 @@ export const getByLogin = (user: IUserResponse) =>
 export const create = async (user: IUserRequest) => {
   const userEntity = await usersRepo.create(user);
 
-  let profile = { lang: 'ru', lang2learn: 'en' };
+  let profile: IUserProfile = { lang: 'ru', lang2learn: 'en' };
 
   if (user.profile) {
-    profile = JSON.parse(user.profile);
+    profile = user.profile;
   }
 
   await profileService.create(profile, userEntity.id);
@@ -24,10 +28,10 @@ export const create = async (user: IUserRequest) => {
   return userEntity;
 };
 
-export const update = async (id: string, user: IUserRequest & IUserModel) => {
+export const update = async (id: string, user: IUserUpdateRequest) => {
   if (user.profile) {
     const { profile } = user;
-    await profileService.update(id, JSON.parse(profile));
+    await profileService.update(id, profile);
   }
 
   return usersRepo.update(id, user);

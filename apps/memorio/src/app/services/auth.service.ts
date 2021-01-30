@@ -12,10 +12,10 @@ const login = async (user: IUser): Promise<IAuthResponse> => {
   if (response.data.token) {
     localStorage.setItem(
       'user',
-      JSON.stringify({ ...response.data, login: user.login })
+      JSON.stringify({ ...response.data, username: user.login })
     );
   }
-  return response.data;
+  return { ...response.data, username: user.login };
 };
 
 const logout = async () => {

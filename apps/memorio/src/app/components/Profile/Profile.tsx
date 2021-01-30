@@ -1,16 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Alert from 'react-bootstrap/esm/Alert';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../auth/ProvideAuth';
 import Subheader from '../Subheader/Subheader';
+import UserService from "./../../services/user.service";
 import './Profile.scss';
 
 export default function Preferences() {
   const { t, i18n } = useTranslation();
   const auth = useAuth();
-  const [languages, setLanguages] = useState(i18n.languages)
-  const [currentUserLang, setCurrentUserLang] = useState(i18n.language);
 
   const { user } = auth;
+  const [userLogin, setUserLogin] = useState(user.username);
+  const [userName, setUserName] = useState(user.name);
+  const [userLang, setUserLang] = useState(i18n.language);
+  const [languages, setLanguages] = useState(i18n.languages);
+  const [submitResult, setSubmitResult] = useState(null);
+  const [errorSubmit, setErrorSubmit] = useState(false);
+  const [errorSubmitMsg, setErrorSubmitMsg] = useState('');
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    const updateFields = {
+      login: userLogin,
+      name: userName,
+      profile: {
+        lang: userLang
+      }
+    }
+
+    await UserService.updateUser(user.userId, updateFields).then(
+      (response) => {
+        setErrorSubmit(false);
+        setErrorSubmitMsg('');
+        setSubmitResult(true);
+      },
+      (error) => {
+        const errorMsg = t('Error update!');
+
+        setErrorSubmit(true);
+        setErrorSubmitMsg(errorMsg);
+        setSubmitResult(false);
+      }
+    );
+  }
 
   const child = () => {
     return (
@@ -35,6 +69,8 @@ export default function Preferences() {
     >
       <Subheader Child={child} />
       <div className="container container-profile">
+        {errorSubmit && <Alert variant="danger">{errorSubmitMsg}</Alert>}
+        {submitResult && <Alert variant="success">{t('Data updated!')}</Alert>}
         <div className="row">
           <div className="col-md-4">
             <div className="inner sidebar">
@@ -61,44 +97,44 @@ export default function Preferences() {
             </div>
           </div>
           <div className="col-md-8">
-            <div className="field field-inline">
-              <label>{t('Username')}</label>
-              <input
-                type="text"
-                name="login"
-                value={user.login}
-                onChange={(e) => e.preventDefault()}
-              />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="field field-inline">
+                <label>{t('Username')}</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={userLogin}
+                  onChange={(e) => setUserLogin(e.target.value)}
+                />
+              </div>
 
-            <div className="field field-inline">
-              <label>{t('Name')}</label>
-              <input
-                type="text"
-                name="name"
-                value={user.name}
-                onChange={(e) => e.preventDefault()}
-              />
+              <div className="field field-inline">
+                <label>{t('Name')}</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                />
 
-            </div>
+              </div>
 
-            <div className="field field-inline">
-              <label>{t('Language')}</label>
-              <select name="language" id="id_language" defaultValue={currentUserLang}>
-                {languages.map(item => <option key={item} value={item}>{i18n.options.resources[item].langName}</option>)}
-              </select>
-            </div>
+              <div className="field field-inline">
+                <label>{t('Language')}</label>
+                <select name="language" id="id_language" defaultValue={userLang} onChange={(e) => setUserLang(e.target.value)}>
+                  {languages.map(item => <option key={item} value={item}>{i18n.options.resources[item].langName}</option>)}
+                </select>
+              </div>
 
-
-            <div className="field field-inline">
-              <button type="submit" className="btn btn-primary">
-                {t('Save changes')}
-              </button>
-            </div>
-
+              <div className="field field-inline">
+                <button type="submit" className="btn btn-primary">
+                  {t('Save changes')}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </main>
+    </main >
   );
 }

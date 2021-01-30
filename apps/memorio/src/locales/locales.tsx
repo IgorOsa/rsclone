@@ -55,6 +55,8 @@ i18n
           'Username': 'Username',
           'Save changes': 'Save changes',
           'Language': 'Language',
+          'Data updated!': 'Data updated!',
+          'Error update!': 'Error update!',
         }
       },
       ru: {
@@ -107,6 +109,8 @@ i18n
           'Username': 'Логин',
           'Language': 'Язык',
           'Save changes': 'Сохранить',
+          'Data updated!': 'Данные обновлены!',
+          'Error update!': 'Ошибка при обновлении!'
         }
       },
     },

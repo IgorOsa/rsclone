@@ -35,6 +35,7 @@ export default function Preferences() {
         setErrorSubmit(false);
         setErrorSubmitMsg('');
         setSubmitResult(true);
+        auth.updateCurrentUser(updateFields);
       },
       (error) => {
         const errorMsg = t('Error update!');
@@ -44,6 +45,8 @@ export default function Preferences() {
         setSubmitResult(false);
       }
     );
+
+    i18n.changeLanguage(userLang);
   }
 
   const child = () => {

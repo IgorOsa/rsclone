@@ -12,10 +12,14 @@ export const getByLogin = (user: IUserResponse) =>
 
 export const create = async (user: IUserRequest) => {
   const userEntity = await usersRepo.create(user);
+
+  let profile = { lang: 'ru', lang2learn: 'en' };
+
   if (user.profile) {
-    const { profile } = user;
-    await profileService.create(JSON.parse(profile), userEntity.id);
+    profile = JSON.parse(user.profile);
   }
+
+  await profileService.create(profile, userEntity.id);
 
   return userEntity;
 };

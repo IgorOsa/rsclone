@@ -6,6 +6,7 @@ i18n
   .init({
     resources: {
       en: {
+        langName: "English",
         translation: {
           "Courses": "Courses",
           "Login": "Login",
@@ -46,9 +47,20 @@ i18n
           'Please input a valid login': 'Please input a valid login',
           'Please input a valid password': 'Please input a valid password',
           'Wrong login/password combination!': 'Wrong login/password combination!',
+          'Profile': 'Profile',
+          'User\'s Profile': 'User\'s Profile',
+          'Upload New Picture': 'Upload New Picture',
+          'View Profile': 'View Profile',
+          'Connect with Facebook': 'Connect with Facebook',
+          'Username': 'Username',
+          'Save changes': 'Save changes',
+          'Language': 'Language',
+          'Data updated!': 'Data updated!',
+          'Error update!': 'Error update!',
         }
       },
       ru: {
+        langName: "Русский",
         translation: {
           "Courses": "Курсы",
           "Login": "Логин",
@@ -89,11 +101,19 @@ i18n
           'Please input a valid login': 'Введите логин',
           'Please input a valid password': 'Введите пароль',
           'Wrong login/password combination!': 'Неверная комбинация логин/пароль!',
+          'Profile': 'Профиль',
+          'User\'s Profile': 'Профиль пользователя',
+          'Upload New Picture': 'Загрузить новое изображение',
+          'View Profile': 'Посмотреть профиль',
+          'Connect with Facebook': 'Подключиться через Facebook',
+          'Username': 'Логин',
+          'Language': 'Язык',
+          'Save changes': 'Сохранить',
+          'Data updated!': 'Данные обновлены!',
+          'Error update!': 'Ошибка при обновлении!'
         }
       },
     },
-    // lng: "en",
-    // fallbackLng: "en",
 
     interpolation: {
       escapeValue: false

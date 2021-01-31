@@ -28,15 +28,18 @@ const MainNav = () => {
               </Nav.Link>
             </>
           ) : (
-            <>
-              <Nav.Link>
-                <Link to="/dashboard">{t('Dashboard')}</Link>
-              </Nav.Link>
-              <Nav.Link onClick={() => auth.logout()}>
-                <Link to="/login">{t('Logout')}</Link>
-              </Nav.Link>
-            </>
-          )}
+              <>
+                <Nav.Link>
+                  <Link to="/dashboard">{t('Dashboard')}</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/profile">{t('Profile')}</Link>
+                </Nav.Link>
+                <Nav.Link onClick={() => auth.logout()}>
+                  <Link to="/login">{t('Logout')}</Link>
+                </Nav.Link>
+              </>
+            )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -1,4 +1,4 @@
-import { IAuthResponse, IUser } from '@memorio/api-interfaces';
+import { IAuthResponse, IUser, IUserUpdateRequest } from '@memorio/api-interfaces';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import AuthService from './../services/auth.service';
 
@@ -36,10 +36,13 @@ export function useProvideAuth() {
 
   const getCurrentUser = (): IAuthResponse => AuthService.getCurrentUser();
 
+  const updateCurrentUser = (user: IUserUpdateRequest) => AuthService.updateCurrentUser(user);
+
   return {
     user,
     login,
     logout,
     getCurrentUser,
+    updateCurrentUser,
   };
 }

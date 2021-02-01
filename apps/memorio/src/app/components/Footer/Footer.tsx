@@ -35,7 +35,7 @@ export const Footer = () => {
           <div className="alma-mater">
             <a className="alma-mater__link" href="https://rs.school/js/">
               <img
-                src="https://rs.school/images/rs_school_js.svg"
+                src="../../../assets/rs_school_js.svg"
                 width="60"
                 alt="RSS"
               />

@@ -1,4 +1,6 @@
 export default {
+  "and": "and",
+  "in": "in",
   "Courses": "Courses",
   "Login": "Login",
   "Sign up": "Sign up",
@@ -6,7 +8,7 @@ export default {
   "introTitle": "The fastest way to learn a language",
   "introDescription": "The key? A natural approach to learning real-life language. Jump in and give it a go!",
   "introLink": "Get Started",
-  "studentsTitle": "Done by:",
+  "studentsTitle": "Developed by:",
   "coursesIntroTitle": "Learn up to 22 languages online with Memorio",
   "coursesIntroDescription": "Preparing for a trip, moving to a new country or ooking to advance your career? Whatever your next adventure is, one of our courses will teach you all the real-life language you need to get out there and meet the world.",
   "coursesIntroLink": "Start Learning",

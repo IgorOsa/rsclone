@@ -49,5 +49,6 @@ export default {
   "Save changes": "Save changes",
   "Language": "Language",
   "Data updated!": "Data updated!",
-  "Error update!": "Error update!"
+  "Error update!": "Error update!",
+  "Learn these words": "Learn these words"
 }

@@ -15,6 +15,11 @@ import Profile from './components/Profile/Profile';
 import { PrivateRoute } from './auth/PrivateRoute';
 import ProvideAuth from './auth/ProvideAuth';
 import SetCourse from './components/Bienvenue/registration/SetCourse';
+import EnglishLessons from './components/EnglishLessons'
+
+
+import LessonDescription from './components/LessonDescription/LessonDescription'
+import levels from '../data/english'
 
 const App = (): JSX.Element => {
   return (
@@ -32,6 +37,14 @@ const App = (): JSX.Element => {
           <PrivateRoute path="/profile">
             <Profile />
           </PrivateRoute>
+          <PrivateRoute path="/english-lessons">
+            <EnglishLessons />
+          </PrivateRoute>
+          {levels.map((it: any, i: number) => (
+            <PrivateRoute path={`/english-${i}`}>
+              <LessonDescription lessonNum={i} />
+            </PrivateRoute>
+          ))}
         </Switch>
         <Footer />
       </Router>

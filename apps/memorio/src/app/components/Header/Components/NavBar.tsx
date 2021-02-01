@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const MainNav = () => {
   const { t } = useTranslation();
   const auth = useAuth();
-
   return (
     <Navbar className="nav-bar">
       <Navbar.Collapse id="basic-navbar-nav">

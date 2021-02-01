@@ -37,7 +37,7 @@ export default function Dashboard(): JSX.Element {
   }
 
   return (
-    <main style={{ margin: "0px 20px", height: "calc(100vh - 160px)" }}>
+    <main style={{ margin: "0px 20px", minHeight: "calc(100vh - 160px)" }}>
       <Subheader Child={child} />
       <div className="container">
         <div className="row">

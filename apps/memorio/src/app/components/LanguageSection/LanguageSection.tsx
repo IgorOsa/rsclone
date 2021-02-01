@@ -39,6 +39,7 @@ export const LanguageSection = () => {
                 <img
                   width="250"
                   src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
+                  alt=""
                 />
               </Col>
             </Row>

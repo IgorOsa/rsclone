@@ -21,7 +21,7 @@ export const Intro = () => {
               {t('introLink')}
             </Link>
           </Col>
-          <img width="450" src="../../../assets/world.png" />
+          <img width="450" src="../../../assets/world.png" alt="" />
         </Row>
       </Container>
     </section>

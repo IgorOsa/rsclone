@@ -11,6 +11,7 @@ import loginRouter from './resources/login/login.router';
 import registerRouter from './resources/register/register.router';
 import userRouter from './resources/users/user.router';
 import { errorHandler } from './errors/errorHandler';
+import logger from './common/logger';
 
 const app = express();
 app.disable('x-powered-by');
@@ -30,6 +31,10 @@ app.get('/api', (req, res, next) => {
   }
   next();
 });
+
+app.use(logger.logToConsole);
+app.use(logger.logAccess);
+app.use(logger.logError);
 
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);

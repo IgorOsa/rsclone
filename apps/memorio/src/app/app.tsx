@@ -8,13 +8,13 @@ import Footer from './components/Footer/Footer';
 
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
-import { SignUp } from './pages/Signup';
 import { Courses } from './pages/Courses';
 
 import Dashboard from './components/Dashboard/Dashboard';
 import Profile from './components/Profile/Profile';
 import { PrivateRoute } from './auth/PrivateRoute';
 import ProvideAuth from './auth/ProvideAuth';
+import SetCourse from './components/Bienvenue/registration/SetCourse';
 
 const App = (): JSX.Element => {
   return (
@@ -25,7 +25,7 @@ const App = (): JSX.Element => {
           <Route exact path="/" component={Home} />
           <Route path="/courses" component={Courses} />
           <Route exact path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
+          <Route path="/signup" component={SetCourse} />
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>

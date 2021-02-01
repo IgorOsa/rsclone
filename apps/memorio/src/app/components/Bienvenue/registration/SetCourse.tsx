@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../bienvenue.scss';
 import { ListGroup, Container, Form, Row, Card, Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export const SetCourse = () => {
   const { t } = useTranslation();
@@ -18,8 +19,9 @@ export const SetCourse = () => {
           as="select"
           size="sm"
           onChange={(el) => setUserLang(el.target.value)}
+          defaultValue="russian"
         >
-          <option selected value="russian">
+          <option value="russian">
             {t('Russian')}
           </option>
           <option value="english">{t('English')}</option>
@@ -37,12 +39,12 @@ export const SetCourse = () => {
             />
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>
-                <Card.Link
-                  href="/signup/add-user"
+                <Link
+                  to="/signup/add-user"
                   onClick={() => setUserLearningLang('english')}
                 >
                   {t('English')}
-                </Card.Link>
+                </Link>
               </Card.Title>
             </Card.Body>
           </Card>
@@ -57,12 +59,12 @@ export const SetCourse = () => {
             />
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>
-                <Card.Link
-                  href="/signup/add-user"
+                <Link
+                  to="/signup/add-user"
                   onClick={() => setUserLearningLang('spanish')}
                 >
                   {t('Spanish')}
-                </Card.Link>
+                </Link>
               </Card.Title>
             </Card.Body>
           </Card>

@@ -10,7 +10,6 @@ module.exports = {
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/react-bootstrap/',
-    '<rootDir>/node_modules/react-i18next/'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/memorio'

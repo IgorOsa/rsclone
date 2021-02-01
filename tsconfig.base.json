@@ -16,8 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@memorio/api-interfaces": ["libs/api-interfaces/src/index.ts"]
-    },
-    "resolveJsonModule": true
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

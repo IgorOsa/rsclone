@@ -28,7 +28,7 @@ const levels: any = [
       {id: 8, title: 'meat', answer: 'мясо'},
       {id: 9, title: 'salad', answer: 'салат', test: ['one', 'three', 'nine']},
       {id: 10, title: 'an apple', answer: 'яблоко', test: ['zero', 'three']},
-      {id: 10, title: 'a banana', answer: 'банан', test: ['one', 'three']},
+      {id: 11, title: 'a banana', answer: 'банан', test: ['one', 'three']},
       {id: 12, title: 'an orange', answer: 'апельсин'},
       {id: 13, title: 'a lemon', answer: 'лимон', test: ['one', 'three']},
       {id: 14, title: 'a snack', answer: 'перекус'},

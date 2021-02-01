@@ -16,7 +16,7 @@ export default function EnglishLessons(): JSX.Element {
         <h2 className="english-lessons__title">English lessons</h2>
         <div className="card-group">
           { levels.map((it: { title: React.ReactNode; }, i: number) => (
-            <Link to={`/english-${i}`} className="card lessons-card">
+            <Link to={`/english-${i}`} className="card lessons-card" key={i}>
               <img src="../../../assets/eng-flag-1.jpg" className="card-img-top" alt=""></img>
               <div className="card-body">
                 <h5 className="card-title title">{ it.title }</h5>

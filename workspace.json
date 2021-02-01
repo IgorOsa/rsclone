@@ -8,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/memorio",
             "index": "apps/memorio/src/index.html",
@@ -21,11 +19,9 @@
               "apps/memorio/src/favicon.ico",
               "apps/memorio/src/assets"
             ],
-            "styles": [
-              "apps/memorio/src/styles.scss"
-            ],
+            "styles": ["apps/memorio/src/styles.scss"],
             "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/webpack"
+            "webpackConfig": "apps/memorio/webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -67,16 +63,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/memorio/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/memorio/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/memorio"
-          ],
+          "outputs": ["coverage/apps/memorio"],
           "options": {
             "jestConfig": "apps/memorio/jest.config.js",
             "passWithNoTests": true
@@ -105,9 +97,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/memorio-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/memorio-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -120,16 +110,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -154,16 +140,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api"
-          ],
+          "outputs": ["coverage/apps/api"],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -179,9 +161,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/api-interfaces/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
           }
         }
       }

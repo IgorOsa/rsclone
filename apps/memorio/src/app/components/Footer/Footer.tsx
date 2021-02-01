@@ -7,19 +7,20 @@ import { useTranslation } from 'react-i18next';
 export const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="footer absolute-bottom">
-      <Container>
-        <Row className="justify-content-between align-items-center">
-          <div className="students">
-            <h4 className="students__title">{t('studentsTitle')}</h4>
-            <ul className="students__list">
-              <li className="students__item">
+    <footer className="footer absolute-bottom d-flex">
+      <Container className="d-flex ">
+        <Row className="justify-content-between align-items-center d-flex w-100">
+          <div className="students d-flex">
+            <div className="students__list d-flex">
+              {t('studentsTitle')}&nbsp;
+              <div className="students__item">
                 <a className="students__link" href="https://github.com/IgorOsa">
                   <div className="icon icon--github" />
                   Igor Osadchyi
                 </a>
-              </li>
-              <li className="students__item">
+              </div>
+              {t('and')}&nbsp;
+              <div className="students__item">
                 <a
                   className="students__link link"
                   href="https://github.com/Kelevrra"
@@ -27,8 +28,9 @@ export const Footer = () => {
                   <div className="icon icon--github" />
                   Alex Kelevrra
                 </a>
-              </li>
-            </ul>
+              </div>
+              {t('in')} 2021.
+            </div>
           </div>
           <div className="alma-mater">
             <a className="alma-mater__link" href="https://rs.school/js/">

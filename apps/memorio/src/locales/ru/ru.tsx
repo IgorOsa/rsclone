@@ -50,5 +50,6 @@ export default {
   "Save changes": "Сохранить",
   "Data updated!": "Данные обновлены!",
   "Error update!": "Ошибка при обновлении!",
-  "Learn these words": "Выучить эти слова"
+  "Learn these words": "Выучить эти слова",
+  "All courses": "Все курсы"
 }

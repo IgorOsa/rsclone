@@ -50,5 +50,6 @@ export default {
   "Language": "Language",
   "Data updated!": "Data updated!",
   "Error update!": "Error update!",
-  "Learn these words": "Learn these words"
+  "Learn these words": "Learn these words",
+  "All courses": "All courses"
 }

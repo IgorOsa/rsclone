@@ -18,8 +18,9 @@ export const SetCourse = () => {
           as="select"
           size="sm"
           onChange={(el) => setUserLang(el.target.value)}
+          defaultValue="russian"
         >
-          <option selected value="russian">
+          <option value="russian">
             {t('Russian')}
           </option>
           <option value="english">{t('English')}</option>

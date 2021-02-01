@@ -41,7 +41,7 @@ const App = (): JSX.Element => {
             <EnglishLessons />
           </PrivateRoute>
           {levels.map((it: any, i: number) => (
-            <PrivateRoute path={`/english-${i}`}>
+            <PrivateRoute path={`/english-${i}`} key={i}>
               <LessonDescription lessonNum={i} />
             </PrivateRoute>
           ))}

@@ -1,4 +1,4 @@
-import { IUserUpdateRequest } from '@memorio/api-interfaces';
+import { IUserStats, IUserUpdateRequest } from '@memorio/api-interfaces';
 import axios from 'axios';
 import authHeader from './auth-header';
 
@@ -14,7 +14,25 @@ const updateUser = (id: string, user: IUserUpdateRequest) => {
   });
 };
 
+const getUserStats = async (id: string) => {
+  return (
+    await axios.get(API_URL + `users/${id}/statistics`, {
+      headers: authHeader(),
+    })
+  ).data;
+};
+
+const updateUserStats = async (id: string, stats: IUserStats) => {
+  return (
+    await axios.put(API_URL + `users/${id}/statistics`, stats, {
+      headers: authHeader(),
+    })
+  ).data;
+};
+
 export default {
   getUserById,
   updateUser,
+  getUserStats,
+  updateUserStats,
 };

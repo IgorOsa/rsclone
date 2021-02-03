@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 COPY ./package.json /usr/src/app/
 COPY ./dist/apps /usr/src/app/
 RUN chmod -R 777 /usr/src/app/
+RUN mkdir -p /usr/src/logs/
+RUN chmod -R 777 /usr/src/logs/
 RUN npm install --production && npm cache clean --force
 COPY ./ /usr/src/app
 ENV NODE_ENV production

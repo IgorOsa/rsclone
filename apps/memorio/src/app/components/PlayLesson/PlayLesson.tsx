@@ -11,6 +11,7 @@ export default function PlayLesson({ lessonNum }): JSX.Element {
   let [right, setRight] = useState('')
   let [wrong, setWrong] = useState('')
   let [answer, setAnswer] = useState('')
+  const taskAnswer = levels[lessonNum].task[task].answer
 
   return (
     <main className="lesson" style={{ minHeight: "calc(100vh - 160px)" }}>
@@ -38,7 +39,7 @@ export default function PlayLesson({ lessonNum }): JSX.Element {
             className="btn btn-outline-secondary"
             type="button"
             onClick={() => {
-              setAnswer(levels[lessonNum].task[task].answer)
+              answer === taskAnswer ? setAnswer('') : setAnswer(taskAnswer)
             }}
           >
             Посмотреть ответ

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CoursesIntro from '../components/CoursesIntro/CoursesIntro';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -1,6 +1,6 @@
 import User, { IUserModel } from './user.model';
 import { EntityExistsError, NotFoundError } from './../../errors/errors';
-import { IUser } from '@memorio/api-interfaces';
+import { IUser, IUserUpdateRequest } from '@memorio/api-interfaces';
 
 const MONGO_ENTITY_EXISTS_ERROR_CODE = 11000;
 
@@ -47,7 +47,7 @@ export const create = async (user: IUser) => {
 
 export const update = async (
   id: string,
-  user: IUserModel
+  user: IUserUpdateRequest
 ): Promise<IUserModel> => {
   const updatedUser = await User.findOneAndUpdate({ _id: id }, user);
 

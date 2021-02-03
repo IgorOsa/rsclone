@@ -1,27 +1,38 @@
-// import axios from 'axios';
-// import authHeader from './auth-header';
+import { IUserStats, IUserUpdateRequest } from '@memorio/api-interfaces';
+import axios from 'axios';
+import authHeader from './auth-header';
 
-// const API_URL = 'http://localhost:8080/api/test/';
+const API_URL = '/api/';
 
-// const getPublicContent = () => {
-//   return axios.get(API_URL + 'all');
-// };
+const getUserById = (id: string) => {
+  return axios.get(API_URL + `users/${id}`, { headers: authHeader() });
+};
 
-// const getUserBoard = () => {
-//   return axios.get(API_URL + 'user', { headers: authHeader() });
-// };
+const updateUser = (id: string, user: IUserUpdateRequest) => {
+  return axios.put(API_URL + `users/${id}`, user, {
+    headers: authHeader(),
+  });
+};
 
-// const getModeratorBoard = () => {
-//   return axios.get(API_URL + 'mod', { headers: authHeader() });
-// };
+const getUserStats = async (id: string) => {
+  return (
+    await axios.get(API_URL + `users/${id}/statistics`, {
+      headers: authHeader(),
+    })
+  ).data;
+};
 
-// const getAdminBoard = () => {
-//   return axios.get(API_URL + 'admin', { headers: authHeader() });
-// };
+const updateUserStats = async (id: string, stats: IUserStats) => {
+  return (
+    await axios.put(API_URL + `users/${id}/statistics`, stats, {
+      headers: authHeader(),
+    })
+  ).data;
+};
 
-// export default {
-//   getPublicContent,
-//   getUserBoard,
-//   getModeratorBoard,
-//   getAdminBoard,
-// };
+export default {
+  getUserById,
+  updateUser,
+  getUserStats,
+  updateUserStats,
+};

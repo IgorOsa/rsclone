@@ -1,0 +1,31 @@
+.lesson-description {
+    .link {
+        display: flex;
+        align-items: center;
+        color: #2c3648;
+        border-radius: 5px;
+        height: 50px;
+        font-weight: 500;
+        font-size: 20px;
+        max-width: 250px;
+        padding: 10px;
+        background-color: #f78410;
+
+        &:hover {
+            text-decoration: none;
+            color: #2c3648;
+            opacity: 0.9;
+        }
+    }
+
+    .audio {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+    }
+
+    .audio-icon {
+        cursor: pointer;
+    }
+}

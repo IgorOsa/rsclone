@@ -11,9 +11,25 @@
   }
 
   .alma-mater {
-    // background-color: white;
     background-color: #f78410;
     padding: 5px;
     border-radius: 5px;
   }
+}
+
+.students__list {
+  list-style: none;
+}
+
+.students__item {
+  margin-right: 10px;
+}
+
+.students__link {
+  color: #f78410;
+}
+
+.students__link:hover {
+  color: #f78410;
+  opacity: 0.9;
 }

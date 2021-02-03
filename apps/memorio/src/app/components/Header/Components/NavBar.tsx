@@ -10,31 +10,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const MainNav = () => {
   const { t } = useTranslation();
   const auth = useAuth();
-
   return (
     <Navbar className="nav-bar">
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
           {!auth.user ? (
             <>
-              <Nav.Link>
+              <div className="nav-link">
                 <Link to="/courses">{t('Courses')}</Link>
-              </Nav.Link>
-              <Nav.Link>
+              </div>
+              <div className="nav-link">
                 <Link to="/login">{t('Login')}</Link>
-              </Nav.Link>
-              <Nav.Link>
+              </div>
+              <div className="nav-link">
                 <Link to="/signup/set-course">{t('Sign up')}</Link>
-              </Nav.Link>
+              </div>
             </>
           ) : (
             <>
-              <Nav.Link>
+              <div className="nav-link">
                 <Link to="/dashboard">{t('Dashboard')}</Link>
-              </Nav.Link>
-              <Nav.Link onClick={() => auth.logout()}>
-                <Link to="/login">{t('Logout')}</Link>
-              </Nav.Link>
+              </div>
+              <div className="nav-link">
+                <Link to="/profile">{t('Profile')}</Link>
+              </div>
+              <div className="nav-link">
+                <Link to="/login" onClick={() => auth.logout()}>{t('Logout')}</Link>
+              </div>
             </>
           )}
         </Nav>

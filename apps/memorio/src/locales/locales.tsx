@@ -1,101 +1,35 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import EnLang from './en/en';
+import RuLang from './ru/ru';
+
+const Languages = ['en', 'ru'];
 
 i18n
+  .use(backend)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    debug: false,
+    fallbackLng: 'en',
+    preload: ['ru', 'en'],
+    whitelist: Languages,
     resources: {
       en: {
-        translation: {
-          "Courses": "Courses",
-          "Login": "Login",
-          "Sign up": "Sign up",
-          "Select Language": "Select Language",
-          "introTitle": "The fastest way to learn a language",
-          "introDescription": "The key? A natural approach to learning real-life language. Jump in and give it a go!",
-          "introLink": "Get Started",
-          "studentsTitle": "Done by:",
-          "coursesIntroTitle": "Learn up to 22 languages online with Memorio",
-          "coursesIntroDescription": "Preparing for a trip, moving to a new country or ooking to advance your career? Whatever your next adventure is, one of our courses will teach you all the real-life language you need to get out there and meet the world.",
-          "coursesIntroLink": "Start Learning",
-          "loginFormLogin": "Login",
-          "loginFormLoginPs": "Enter login",
-          "loginFormPassword": "Password",
-          "loginFormPasswordPs": "Password",
-          "loginSubmit": "Submit",
-          "My lang is": "My lang is",
-          "Russian": "Russian",
-          "English": "English",
-          "I want to learn": "I want to learn",
-          "Spanish": "Spanish",
-          "iconLang": "assets/united-kingdom-icon.svg",
-          "registrationFormName": "Your Name",
-          "registrationFormLogin": "Create a login...",
-          "registrationFormPassword": "Create a password...",
-          "Name": "Name",
-          "Password": "Password",
-          "Register": "Register",
-          "Cant be empty": "Cant be empty",
-          'Minimum 2 characters': 'Minimum 2 characters',
-          'Maximum 15 characters': 'Maximum 15 characters',
-          'Minimum 4 characters': 'Minimum 4 characters',
-          "TooShort": "At least 4 characters",
-          "Dashboard": "Dashboard",
-          "Logout": "Logout",
-          "Repeat": "Repeat",
-          'Please input a valid login': 'Please input a valid login',
-          'Please input a valid password': 'Please input a valid password',
-          'Wrong login/password combination!': 'Wrong login/password combination!',
-        }
+        langName: "English",
+        translation: EnLang,
       },
       ru: {
-        translation: {
-          "Courses": "Курсы",
-          "Login": "Логин",
-          "Sign up": "Регистрация",
-          "Select Language": "Выбрать язык",
-          "introTitle": "Самый быстрый способ выучить язык",
-          "introDescription": "В чем секрет? Естественный подход к изучению современного языка. Присоединяйся!",
-          "introLink": "Начать!",
-          "studentsTitle": "Подготовили:",
-          "coursesIntroTitle": "Учи языки онлайн вместе с Memorio",
-          "coursesIntroDescription": "Готовишься к путешествию, переезжаешь в новую страну или хочешь продвинуться по карьерной лестнице? Какой бы ни была твоя мотивация, с одним из наших курсов ты выучишь настоящий живой язык, на котором говорят в выбранной тобой стране.",
-          "coursesIntroLink": "Начинай учиться",
-          "loginFormLogin": "Логин",
-          "loginFormLoginPs": "Ваш логин",
-          "loginFormPassword": "Пароль",
-          "loginFormPasswordPs": "Пароль",
-          "loginSubmit": "Вход",
-          "My lang is": "Мой язык",
-          "Russian": "Русский",
-          "English": "Английский",
-          "I want to learn": "Я хочу выучить",
-          "Spanish": "Испанский",
-          "iconLang": "assets/russia-icon.svg",
-          "registrationFormName": "Ваше имя",
-          "registrationFormLogin": "Придумайте логин...",
-          "registrationFormPassword": "Придумайте пароль...",
-          "Name": "Имя",
-          "Password": "Пароль",
-          "Register": "Зарегистрироваться",
-          "Cant be empty": "Это поле обязательное",
-          "Minimum 2 characters": 'Минимум 2 символа',
-          "Maximum 15 characters": 'Минимум 15 символов',
-          "Minimum 4 characters": 'Минимум 4 символа',
-          "TooShort": "Минимум 4 символа латиницей",
-          "Dashboard": "Главная",
-          "Logout": "Выход",
-          "Repeat": "Повторение",
-          'Please input a valid login': 'Введите логин',
-          'Please input a valid password': 'Введите пароль',
-          'Wrong login/password combination!': 'Неверная комбинация логин/пароль!',
-        }
+        langName: "Русский",
+        translation: RuLang,
       },
     },
-    // lng: "en",
-    // fallbackLng: "en",
 
     interpolation: {
       escapeValue: false
     }
   });
+
+export default i18n;

@@ -16,11 +16,10 @@ import { PrivateRoute } from './auth/PrivateRoute';
 import ProvideAuth from './auth/ProvideAuth';
 import SetCourse from './components/Bienvenue/registration/SetCourse';
 import EnglishLessons from './components/EnglishLessons'
-
-
 import LessonDescription from './components/LessonDescription/LessonDescription'
 import PlayLesson from './components/PlayLesson/PlayLesson'
 import levels from '../data/english'
+import SignUp from './pages/Signup';
 
 const App = (): JSX.Element => {
   return (
@@ -31,7 +30,7 @@ const App = (): JSX.Element => {
           <Route exact path="/" component={Home} />
           <Route path="/courses" component={Courses} />
           <Route exact path="/login" component={Login} />
-          <Route path="/signup" component={SetCourse} />
+          <Route path="/signup" component={SignUp} />
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>

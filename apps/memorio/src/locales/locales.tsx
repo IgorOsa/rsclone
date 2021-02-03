@@ -14,7 +14,7 @@ i18n
   .init({
     debug: false,
     fallbackLng: 'en',
-    preload: ['ru'],
+    preload: ['ru', 'en'],
     whitelist: Languages,
     resources: {
       en: {

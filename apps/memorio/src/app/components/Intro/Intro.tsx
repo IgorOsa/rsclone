@@ -17,7 +17,7 @@ export const Intro = () => {
           <Col>
             <h2 className="intro__title">{t('introTitle')}</h2>
             <p className="intro__description">{t('introDescription')}</p>
-            <Link className="intro__link" to="/signup">
+            <Link className="intro__link" to="/signup/set-course">
               {t('introLink')}
             </Link>
           </Col>

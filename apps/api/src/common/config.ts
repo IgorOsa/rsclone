@@ -14,3 +14,5 @@ export const DEFAULT_SALT_ROUNDS = parseInt(
 );
 export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 export const JWT_EXPIRE_TIME = process.env.JWT_EXPIRE_TIME;
+
+export const LOGS_DIR = path.join(__dirname, '../../logs');

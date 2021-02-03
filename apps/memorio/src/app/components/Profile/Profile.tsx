@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Alert from 'react-bootstrap/esm/Alert';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../auth/ProvideAuth';

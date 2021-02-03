@@ -11,19 +11,19 @@ import AudioPlay from '../AudioPlay/AudioPlay'
 export default function LessonDescription({ lessonNum }): JSX.Element {
   const { t } = useTranslation();
   const title = levels[lessonNum].title
-  let [audio, setAudio] = useState('')
-  
+  const [audio, setAudio] = useState('')
+
   return (
     <div className="container lesson-description">
       <div className="row d-flex justify-content-between align-items-center">
-        <h1 style={{lineHeight: "2"}}>{title}</h1>
+        <h1 style={{ lineHeight: "2" }}>{title}</h1>
         <Link className="link" to={`/task-${lessonNum}`}>
           {t('Learn these words')}
         </Link>
       </div>
       <table className="table">
         <tbody>
-          {levels[lessonNum].task.map((it: { title: string; answer: string; id: number, audio: any }) => (
+          {levels[lessonNum].task.map((it: { title: string; answer: string; id: number, audio: string }) => (
             <tr key={it.id}>
               <td>{it.id + 1}</td>
               <td>{it.title}</td>
@@ -42,7 +42,7 @@ export default function LessonDescription({ lessonNum }): JSX.Element {
           ))}
         </tbody>
       </table>
-      <AudioPlay audio={ audio } />
+      <AudioPlay audio={audio} />
     </div>
   )
 }

@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './english-lessons.scss';
 
-import levels from '../../../data/english';
-import { Link } from 'react-router-dom';
-
 import Subheader from '../Subheader/Subheader';
+import levels from '../../../data/english';
 
 export default function EnglishLessons(): JSX.Element {
   const { t } = useTranslation();
@@ -25,17 +24,17 @@ export default function EnglishLessons(): JSX.Element {
       </div>
     );
   }
-  
+
   return (
     <main className="english-lessons" style={{ minHeight: "calc(100vh - 160px)", margin: "0 20px" }}>
       <Subheader Child={child} />
       <div className="container">
         <div className="card-group">
-          { levels.map((it: { title: React.ReactNode; }, i: number) => (
+          {levels.map((it: { title: React.ReactNode; }, i: number) => (
             <Link to={`/english-${i}`} className="card lessons-card" key={i}>
               <img src="../../../assets/eng-flag-1.jpg" className="card-img-top" alt=""></img>
               <div className="card-body">
-                <h5 className="card-title title">{ it.title }</h5>
+                <h5 className="card-title title">{it.title}</h5>
               </div>
             </Link>
           ))}

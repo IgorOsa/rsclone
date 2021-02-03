@@ -30,8 +30,13 @@
         color: #f78410;
     }
 
-    .show-answer {
+    .show-answer,
+    .finish-btn {
         background-color: #f78410;
         color: white;
     }
+
+     .finish-btn {
+         margin: 10px;
+     }
 }

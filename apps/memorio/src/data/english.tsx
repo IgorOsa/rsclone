@@ -1,4 +1,9 @@
 const levels: any = [
+  
+  {
+title: 'Числа от 0 до 9',
+task: [{id: 0, title: 'Hoль', answer: 'zero', audio: 'zero.mp3',test: ['zero', 'three', 'four', 'five']}]
+  },
   {
     title: 'Числа от 0 до 9',
     task: [
@@ -11,7 +16,7 @@ const levels: any = [
       {id: 6, title: 'Шесть', answer: 'six', audio: 'six.mp3',test: ['one', 'three', 'six', 'eight']},
       {id: 7, title: 'Семь', answer: 'seven', audio: 'seven.mp3',test: ['one', 'three','two', 'seven']},
       {id: 8, title: 'Восемь', answer: 'eight', audio: 'eight.mp3',test: ['one', 'three','six', 'eight']},
-      {id: 9, title: 'Девять', answer: 'nine', audio: 'nine.mp3',test: ['one', 'three', 'nine', 'six']}
+      {id: 9, title: 'Девять', answer: 'nine', audio: 'nine.mp3',test: ['one', 'three', 'nine', 'six']},
     ]
   },
   {
@@ -38,7 +43,7 @@ const levels: any = [
       {id: 18, answer: 'chicken', title: 'курица', audio: 'chicken.mp3', test: ['chicken', 'pasta', 'what', 'happy']},
       {id: 19, answer: 'pork', title: 'свинина', audio: 'pork.mp3', test: ['one', 'pork', 'three', 'nine']},
       {id: 20, answer: 'beef', title: 'говядина', audio: 'beef.mp3', test: ['beef', 'pasta', 'what', 'happy']},
-      {id: 21, answer: 'fish', title: 'рыба', audio: 'fish.mp3', test: ['one', 'three', 'nine', 'fish']}
+      {id: 21, answer: 'fish', title: 'рыба', audio: 'fish.mp3', test: ['one', 'three', 'nine', 'fish']},
     ]
   },
   {
@@ -57,7 +62,7 @@ const levels: any = [
       {id: 10, answer: 'I like', title: 'мне нравится', audio: 'I-like.mp3', test: ['one', 'three', 'nine', 'I like']},
       {id: 11, answer: `it's delicious`, title: 'это очень вкусно', audio: `its-delicious.mp3`, test: ['one', `it's delicious`, 'three', 'nine']},
       {id: 12, answer: 'coffee is delicious', title: 'кофе - очень вкусный', audio: 'coffee-is-delicious.mp3', test: ['coffee is delicious', 'one', 'three', 'nine']},
-      {id: 13, answer: 'I like tea and coffee', title: 'мне нравятся чай и кофе', audio: 'I-like-tea-and-coffee.mp3', test: ['one', 'I like tea and coffee', 'three', 'nine']}
+      {id: 13, answer: 'I like tea and coffee', title: 'мне нравятся чай и кофе', audio: 'I-like-tea-and-coffee.mp3', test: ['one', 'I like tea and coffee', 'three', 'nine']},
     ]
   },
   {
@@ -81,7 +86,7 @@ const levels: any = [
       {id: 15, answer: 'are you hungry?', title: 'ты голоден?', audio: 'are-you-hungry.mp3', test: ['are you hungry?', `you're right`, 'tired', 'food']},
       {id: 16, answer: `I'm very thirsty`, title: 'я очень хочу пить', audio: `Im-very-thirsty.mp3`, test: [`you're sick`, `I'm very thirsty`, `I'm not very thirsty`, `I'm right`]},
       {id: 17, answer: `I'm a little thirsty`, title: 'я немного хочу пить', audio: `Im-a-little-thirsty.mp3`, test: [`I'm a little thirsty`, `I'm right`, `you're right`, 'thirsty']},
-      {id: 18, answer: `you're right`, title: 'ты прав', audio: `youre-right.mp3`, test: ['happy', 'sad', `you're sick`, `you're right`]}
+      {id: 18, answer: `you're right`, title: 'ты прав', audio: `youre-right.mp3`, test: ['happy', 'sad', `you're sick`, `you're right`]},
     ]
   },
   // {

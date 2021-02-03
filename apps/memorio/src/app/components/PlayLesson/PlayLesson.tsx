@@ -6,6 +6,8 @@ import './play-lesson.scss'
 
 import { Link } from 'react-router-dom';
 import levels from '../../../data/english';
+import { number } from 'yup';
+import { useAuth } from '../../auth/ProvideAuth';
 
 export default function PlayLesson({ lessonNum }): JSX.Element {
   let [task, setTask] = useState(0)
@@ -15,6 +17,13 @@ export default function PlayLesson({ lessonNum }): JSX.Element {
   let [rightModal, setRightModal] = useState('')
   const taskAnswer = levels[lessonNum].task[task].answer
   let [audio, setAudio] = useState('')
+  const auth = useAuth();
+  
+  console.log(auth)
+  // let [wrongAnswers, setWrongAnswers] = useState(0)
+  // let [correctAnswers, setCorrectAnswers] = useState(0)
+  // let [learnedWords, setLearnedWords] = useState(0)
+  
 
   return (
     <main className="lesson" style={{ minHeight: "calc(100vh - 160px)" }}>
@@ -33,6 +42,7 @@ export default function PlayLesson({ lessonNum }): JSX.Element {
                     setAnswer('')
                     setRightModal('Верно!')
                     setAudio(levels[lessonNum].task[task].audio)
+                    // setLearnedWords(el => el += 1)
                     setTimeout(() => {
                       setRightModal('')
                       setTask(task += 1)
@@ -40,6 +50,7 @@ export default function PlayLesson({ lessonNum }): JSX.Element {
                   } else {
                     setAudio('error.mp3')
                     setWrong('wrong')
+                    // setWrongAnswers(el => el += 1)
                       setTimeout(() => {
                         setAudio('')
                         setWrong('s')

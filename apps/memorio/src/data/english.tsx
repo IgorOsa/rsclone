@@ -51,11 +51,11 @@ const levels: any = [
       {id: 4, answer: 'disgusting', title: 'отвратительный', audio: 'disgusting.mp3', test: ['disgusting', 'delicious', 'like', 'three']},
       {id: 5, answer: 'awesome', title: 'потрясающий', audio: 'awesome.mp3', test: ['awesome', 'one', 'three', 'five']},
       {id: 6, answer: 'to do', title: 'делать', audio: 'to-do.mp3', test: ['to like', 'to do', 'it is', 'is']},
-      {id: 7, answer: `don't; doesn't`, title: 'не (делать)', audio: `don't-doesn't.mp3`, test: ['to like', 'to do', `don't; doesn't`, 'is']},
+      {id: 7, answer: `don't; doesn't`, title: 'не (делать)', audio: `dont-doesnt.mp3`, test: ['to like', 'to do', `don't; doesn't`, 'is']},
       {id: 8, answer: 'and', title: 'и', audio: 'and.mp3', test: ['disgusting', 'and', 'like', 'three']},
       {id: 9, answer: 'but', title: 'но', audio: 'but.mp3', test: ['one', 'three', 'but', 'nine']},
       {id: 10, answer: 'I like', title: 'мне нравится', audio: 'I-like.mp3', test: ['one', 'three', 'nine', 'I like']},
-      {id: 11, answer: `it's delicious`, title: 'это очень вкусно', audio: `it's-delicious.mp3`, test: ['one', `it's delicious`, 'three', 'nine']},
+      {id: 11, answer: `it's delicious`, title: 'это очень вкусно', audio: `its-delicious.mp3`, test: ['one', `it's delicious`, 'three', 'nine']},
       {id: 12, answer: 'coffee is delicious', title: 'кофе - очень вкусный', audio: 'coffee-is-delicious.mp3', test: ['coffee is delicious', 'one', 'three', 'nine']},
       {id: 13, answer: 'I like tea and coffee', title: 'мне нравятся чай и кофе', audio: 'I-like-tea-and-coffee.mp3', test: ['one', 'I like tea and coffee', 'three', 'nine']}
     ]
@@ -75,13 +75,13 @@ const levels: any = [
       {id: 9, answer: 'a little; a bit', title: 'немного; чуть-чуть', audio: 'a-little-a-bit.mp3', test: ['happy', 'a little; a bit', 'I like', 'wrong']},
       {id: 10, answer: 'I like', title: 'мне нравится', audio: 'I-like.mp3', test: ['I like', `you're sick`, 'a little; a bit', 'thirsty']},
       {id: 11, answer: `not`, title: 'не (используется с глаголами)', audio: 'not.mp3', test: ['hungry', 'not', 'angry', 'sad']},
-      {id: 12, answer: `I'm tired`, title: 'я устал', audio: `I'm-tired.mp3`, test: ['thirsty', `I'm tired`, 'hungry', `I'm not tired`]},
-      {id: 13, answer: `I'm not tired`, title: 'я не устал', audio: `I'm-not-tired.mp3`, test: [`I'm not tired`, `you're sick`, `you're right`, '']},
-      {id: 14, answer: `you're sick`, title: 'ты болен', audio: `you're-sick.mp3`, test: ['thirsty', `you're sick`, 'happy', 'are you hungry?']},
-      {id: 15, answer: 'are you hungry?', title: 'ты голоден?', audio: 'are-you-hungry?.mp3', test: ['are you hungry?', `you're right`, 'tired', 'food']},
-      {id: 16, answer: `I'm very thirsty`, title: 'я очень хочу пить', audio: `I'm-very-thirsty.mp3`, test: [`you're sick`, `I'm very thirsty`, `I'm not very thirsty`, `I'm right`]},
-      {id: 17, answer: `I'm a little thirsty`, title: 'я немного хочу пить', audio: `I'm-a-little-thirsty.mp3`, test: [`I'm a little thirsty`, `I'm right`, `you're right`, 'thirsty']},
-      {id: 18, answer: `you're right`, title: 'ты прав', audio: `you're-right.mp3`, test: ['happy', 'sad', `you're sick`, `you're right`]}
+      {id: 12, answer: `I'm tired`, title: 'я устал', audio: `Im-tired.mp3`, test: ['thirsty', `I'm tired`, 'hungry', `I'm not tired`]},
+      {id: 13, answer: `I'm not tired`, title: 'я не устал', audio: `Im-not-tired.mp3`, test: [`I'm not tired`, `you're sick`, `you're right`, '']},
+      {id: 14, answer: `you're sick`, title: 'ты болен', audio: `youre-sick.mp3`, test: ['thirsty', `you're sick`, 'happy', 'are you hungry?']},
+      {id: 15, answer: 'are you hungry?', title: 'ты голоден?', audio: 'are-you-hungry.mp3', test: ['are you hungry?', `you're right`, 'tired', 'food']},
+      {id: 16, answer: `I'm very thirsty`, title: 'я очень хочу пить', audio: `Im-very-thirsty.mp3`, test: [`you're sick`, `I'm very thirsty`, `I'm not very thirsty`, `I'm right`]},
+      {id: 17, answer: `I'm a little thirsty`, title: 'я немного хочу пить', audio: `Im-a-little-thirsty.mp3`, test: [`I'm a little thirsty`, `I'm right`, `you're right`, 'thirsty']},
+      {id: 18, answer: `you're right`, title: 'ты прав', audio: `youre-right.mp3`, test: ['happy', 'sad', `you're sick`, `you're right`]}
     ]
   },
   // {

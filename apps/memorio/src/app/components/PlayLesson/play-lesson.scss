@@ -15,9 +15,23 @@
         @media(max-width: 500px) {
             grid-template-columns: repeat(1, 1fr);
         }
+
+        .btn:hover {
+            background-color: #f78410;
+        }
     }
 
     .wrong {
-        background-color: red;
+        color: red;
+    }
+
+    &__title.right {
+        font-size: 4rem;
+        color: #f78410;
+    }
+
+    .show-answer {
+        background-color: #f78410;
+        color: white;
     }
 }

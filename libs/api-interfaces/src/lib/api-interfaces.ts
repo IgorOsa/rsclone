@@ -17,6 +17,14 @@ export interface IUserProfile {
   lang?: string;
   lang2learn?: string;
   userId?: string;
+  statistics?: unknown;
+}
+
+export interface IUserStats {
+  learnedWords: number;
+  finishedTasks: number;
+  mistakes: number;
+  correct: number;
 }
 
 export interface IAuthResponse {

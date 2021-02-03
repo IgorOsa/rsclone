@@ -15,6 +15,15 @@ export const profileSchema = new mongoose.Schema(
       type: String,
       default: 'en',
     },
+    statistics: {
+      type: Object,
+      default: {
+        learnedWords: 0,
+        finishedTasks: 0,
+        mistakes: 0,
+        correct: 0,
+      },
+    },
   },
   {
     collection: 'profiles',

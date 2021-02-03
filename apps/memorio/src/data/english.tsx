@@ -1,9 +1,4 @@
 const levels: any = [
-  
-  {
-title: 'Числа от 0 до 9',
-task: [{id: 0, title: 'Hoль', answer: 'zero', audio: 'zero.mp3',test: ['zero', 'three', 'four', 'five']}]
-  },
   {
     title: 'Числа от 0 до 9',
     task: [

@@ -12,7 +12,7 @@ export default function Questions({ lessonNum }): JSX.Element {
   let [right, setRight] = useState('')
   let [wrong, setWrong] = useState('')
   let [answer, setAnswer] = useState('')
-  let [check, setCheck] = useState('')
+  let [check, setCheck] = useState(0)
   let [rightModal, setRightModal] = useState('')
   const taskAnswer = levels[lessonNum].task[task].answer
   const tasksLength = levels[lessonNum].task.length
@@ -20,7 +20,7 @@ export default function Questions({ lessonNum }): JSX.Element {
   let [wrongAnswers, setWrongAnswers] = useState(0)
   let [correctAnswers, setCorrectAnswers] = useState(0)
   
-  if(check == levels[lessonNum].task.length) {
+  if(check >= levels[lessonNum].task.length) {
     return (
       <>
         <Result 

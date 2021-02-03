@@ -13,7 +13,7 @@ export default function Result({ lessonNum, correctAnswers, wrongAnswers, tasksL
       <h2>Тест пройден!</h2>
       <h3>Ваш результат:</h3>
       <p>Ошибки: { wrongAnswers }</p>
-      <p>Точночть: {correctAnswers / 100 * tasksLength}%</p>
+      <p>Точночть: {correctAnswers / tasksLength * 100 }%</p>
       <Link className="btn finish-btn" to="/dashboard">В кабинет</Link>
       <Link className="btn finish-btn" to="/english-lessons">Учить еще!</Link>
     </>

@@ -1,12 +1,13 @@
 .user-info {
   max-width: 300px;
   min-height: 300px;
-  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   border-radius: 5px;
+  border: solid 1px #e6e6e6;
+  margin-top: 10px;
 
   &__level {
     font-size: 1.5rem;

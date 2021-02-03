@@ -1,0 +1,23 @@
+.lesson {
+    text-align: center;
+    margin-top: 20px;
+
+    &__body {
+        max-width: 420px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: stretch;
+        grid-gap: 10px;
+        margin: 30px auto;
+        padding-bottom: 20px;
+        border-bottom: solid 1px #a5a5a5;
+
+        @media(max-width: 500px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .wrong {
+        background-color: red;
+    }
+}

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import levels from '../../../data/english'
 import { Link } from 'react-router-dom';
 
-export default function LessonDescription({lessonNum}): JSX.Element {
+export default function LessonDescription({ lessonNum }): JSX.Element {
   const { t } = useTranslation();
   const title = levels[lessonNum].title
   
@@ -14,7 +14,7 @@ export default function LessonDescription({lessonNum}): JSX.Element {
     <div className="container lesson-description">
       <div className="row d-flex justify-content-between align-items-center">
         <h1 style={{lineHeight: "2"}}>{title}</h1>
-        <Link className="link" to="/">
+        <Link className="link" to={`/task-${lessonNum}`}>
           {t('Learn these words')}
         </Link>
       </div>

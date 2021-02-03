@@ -19,6 +19,7 @@ import EnglishLessons from './components/EnglishLessons'
 
 
 import LessonDescription from './components/LessonDescription/LessonDescription'
+import PlayLesson from './components/PlayLesson/PlayLesson'
 import levels from '../data/english'
 
 const App = (): JSX.Element => {
@@ -40,9 +41,14 @@ const App = (): JSX.Element => {
           <PrivateRoute path="/english-lessons">
             <EnglishLessons />
           </PrivateRoute>
-          {levels.map((it: any, i: number) => (
+          {levels.map((_it: any, i: number) => (
             <PrivateRoute path={`/english-${i}`} key={i}>
               <LessonDescription lessonNum={i} />
+            </PrivateRoute>
+          ))}
+          {levels.map((it: any, i: number) => (
+            <PrivateRoute path={`/task-${i}`} key={i}>
+              <PlayLesson lessonNum={i} />
             </PrivateRoute>
           ))}
         </Switch>

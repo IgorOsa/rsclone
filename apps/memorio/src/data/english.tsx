@@ -2,16 +2,16 @@ const levels: any = [
   {
     title: 'Числа от 0 до 9',
     task: [
-      {id: 0, title: 'Hoль', answer: 'zero', test: ['zero', 'three']},
-      {id: 1, title: 'Один', answer: 'one', test: ['one', 'three']},
-      {id: 2, title: 'Два', answer: 'two'},
-      {id: 3, title: 'Три', answer: 'three', test: ['one', 'three']},
-      {id: 4, title: 'Четыре', answer: 'four'},
-      {id: 5, title: 'Пять', answer: 'five', test: ['one', 'three', 'five']},
-      {id: 6, title: 'Шесть', answer: 'six'},
-      {id: 7, title: 'Семь', answer: 'seven'},
-      {id: 8, title: 'Восемь', answer: 'eight'},
-      {id: 9, title: 'Девять', answer: 'nine', test: ['one', 'three', 'nine']}
+      {id: 0, title: 'Hoль', answer: 'zero', test: ['zero', 'three', 'four', 'five']},
+      {id: 1, title: 'Один', answer: 'one', test: ['one', 'three', 'zero', 'five']},
+      {id: 2, title: 'Два', answer: 'two', test: ['one', 'three', 'two', 'seven']},
+      {id: 3, title: 'Три', answer: 'three', test: ['one', 'three', 'nine', 'zero']},
+      {id: 4, title: 'Четыре', answer: 'four', test: ['four', 'five', 'one', 'three']},
+      {id: 5, title: 'Пять', answer: 'five', test: ['one', 'three', 'five', 'six']},
+      {id: 6, title: 'Шесть', answer: 'six', test: ['one', 'three', 'six', 'eight']},
+      {id: 7, title: 'Семь', answer: 'seven', test: ['one', 'three','two', 'seven']},
+      {id: 8, title: 'Восемь', answer: 'eight', test: ['one', 'three','six', 'eight']},
+      {id: 9, title: 'Девять', answer: 'nine', test: ['one', 'three', 'nine', 'six']}
     ]
   },
   {

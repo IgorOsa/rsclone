@@ -42,10 +42,25 @@ export const getUserStats = async (id: string) => {
   return profile.statistics;
 };
 
+function convertToDotNotation(obj, newObj = {}, prefix = '') {
+  for (const key in obj) {
+    if (typeof obj[key] === 'object') {
+      convertToDotNotation(obj[key], newObj, prefix + key + '.');
+    } else {
+      newObj[prefix + key] = obj[key];
+    }
+  }
+
+  return newObj;
+}
+
 export const updateUserStats = async (id: string, stats: IUserStats) => {
+  // convert to dot notation for update only affected fields of nested document
+  const dotNotated = convertToDotNotation({ statistics: { ...stats } });
+
   const updatedProfile = await Profile.findOneAndUpdate(
     { userId: id },
-    { $set: { statistics: stats } },
+    { $set: dotNotated },
     { new: true }
   );
 

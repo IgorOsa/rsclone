@@ -21,10 +21,10 @@ export interface IUserProfile {
 }
 
 export interface IUserStats {
-  learnedWords: number;
-  finishedTasks: number;
-  mistakes: number;
-  correct: number;
+  learnedWords?: number;
+  finishedTasks?: number;
+  mistakes?: number;
+  correct?: number;
 }
 
 export interface IAuthResponse {

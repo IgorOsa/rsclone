@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Container, Card, Button, Col } from 'react-bootstrap';
 import './LanguageSection.scss';
